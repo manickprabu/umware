@@ -1,0 +1,292 @@
+/*
+ * jQuery Nivo Slider v2.6
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2011, Gilbert Pellegrom
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * March 2010
+ */
+ 
+ 
+/* The Nivo Slider styles */
+.nivoSlider {
+	position:relative;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+}
+/* Caption styles */
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background: rgba(0,0,0,.65);
+	color:#fff;
+	opacity:0.8; /* Overridden by captionOpacity setting */
+	width:100%;
+	z-index:8;
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+	font-family: Thoma, helvetica, sans-serif; 
+}
+.nivo-caption a {
+	display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+	position:absolute;
+	top:45%;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-prevNav {
+	left:0px;
+}
+.nivo-nextNav {
+	right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav a {
+	position:relative;
+	z-index:9;
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+
+
+/*--------------------------------------------
+Homepage
+---------------------------------------------*/
+div#homepage div#slider{
+	/*margin: 0 auto;
+	margin-bottom: 30px;*/
+	width: 918px;
+	background: url('../images/page_heading.png') no-repeat bottom center;
+	padding-bottom: 50px;
+}
+	/* Nivo Slider */
+	div#homepage #slides { 
+		border: 0px solid #d2d2d2; 
+		margin-top:4px;
+	}
+	div#homepage #slides img {
+		position:absolute;
+		top:0px;
+		left:0px;
+		display:none;
+		height: 346px;
+		
+		border: 1px solid #d2d2d2; 
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
+		-khtml-border-radius: 6px;
+		border-radius: 6px;
+	}
+		div#homepage #slides a {
+		   border:0;
+		   display:block;
+		}
+		div#homepage #slides .nivo-caption {
+			width: auto;
+			left: 0;
+			bottom: 40px;
+			background: none;
+			overflow: visible;
+			z-index: auto;
+		}
+			div#homepage #slides .nivo-caption p {
+			  background: #000;
+				background: rgba(0,0,0,.65);
+				padding: 15px 40px 17px 40px;
+				margin: 0;
+				font-size: 20px;
+				font-weight: normal;
+				color: #fff;
+				border: 1px solid rgba(255,255,255,0.25);
+				border-left: none;
+				position: relative;
+				z-index: 9;
+				overflow: visible;
+			}
+			div#homepage #slides .nivo-caption p span{
+				position: absolute;
+				right: -55px;
+				top: -12px;
+				background: url('../images/colors/lime/date_bg.png') no-repeat;
+				width: 71px;
+				color: #fff;
+				font-weight: bold;
+				font-size: 25px;
+				text-align: center;
+				padding: 24px 0px 33px 0px;
+				text-shadow: 0px 2px 1px #999;
+				z-index: 10;
+			}	
+			div#homepage #slides .nivo-caption a { display: block; margin-top: 20px; }
+			.nivo-controlNav {
+				position: absolute; 
+				bottom: -30px;
+				position:absolute;
+				left:50%;
+		    margin-left:-30px; /* Tweak this to center bullets */
+			}
+			div#homepage #slides .nivo-controlNav { z-index: 12; }
+			div#homepage #slides .nivo-controlNav a{
+					display: block;
+					float: left;
+					margin-right: 6px;
+					width: 10px;
+					height: 10px;	
+					-moz-border-radius: 5px;
+					-webkit-border-radius: 5px;
+					border-radius: 5px;
+					background: #c1c1c1;
+					text-indent: -999999px;
+					box-shadow: inset 0px 2px 2px #888;
+				}
+			div#homepage #slides	.nivo-controlNav a.active{ background: #777; }
+div#homepage div#welcome {
+	padding-bottom: 0px;
+}
+	div#homepage div#welcome h2{
+		margin-bottom: 10px;
+	}
+	div#homepage div#welcome p{
+		line-height: 22px;
+		font-size: 12px;
+		margin-bottom: 0px;
+	}
+	div#welcome .about {
+		float: left;
+		width: 360px;
+		position: relative;
+		z-index: 2;
+		background: url('../images/fading_line.png') no-repeat top right;
+		padding-right: 30px;
+		min-height: 170px;
+		overflow: hidden;
+	}
+	div#welcome .gallery {
+		float: right;
+		width: 495px;
+		position: relative;
+		z-index: 2;
+		overflow: hidden;
+	}
+		div#welcome .gallery ul { list-style: none; }
+			div#welcome .gallery ul li {
+				float: left;
+				margin-right: 15px;
+				position: relative;
+				background: url('../images/mini_gallery_bg.png') no-repeat top left;
+				height: 155px;
+				width: 155px;
+			}
+			div#welcome .gallery ul li.last { margin-right: 0; }
+			div#welcome .gallery ul li img {
+				padding: 12px 0px 0px 12px;
+			}
+			div#welcome .gallery ul li span{
+				background: #000;
+				background: rgba(0,0,0,0.6);
+				color: #fff;
+				font-weight: bold;
+				font-size: 14px;
+				display: block;
+				position: absolute;
+				bottom: 13px;
+				left: 12px;
+				width: 129px;
+				text-align: center;
+				padding: 10px 0px 10px 0px;
+				border-top: 1px solid #555;
+			}
+div#homepage .one_third { margin-bottom: 0; overflow: hidden; padding-bottom: 8px; }			
+div#homepage .one_third h2 {
+	border-bottom: 1px solid #e2e2e2;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+/* Daily Specials */
+div#homepage div#specials ul {
+	list-style: none;
+}
+	div#homepage div#specials ul li {
+		display: block;
+		margin-bottom: 12px;
+		padding-bottom: 15px;
+		border-bottom: 1px dashed #dbdbdb;
+		clear: both;
+		overflow: hidden;
+	}	
+		div#homepage div#specials ul li .description {
+			width: 200px;
+			float: right;
+		}
+		div#homepage div#specials ul li strong {
+			font-size: 12px;
+			margin-bottom: 3px;
+			display: block;
+		}
+		div#homepage div#specials ul li p {				
+			font-size: 11px;
+			line-height: 16px;
+			margin-bottom: 3px;
+		}
+		div#homepage div#specials ul li span.price {
+			color: #8080808;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		div#homepage div#specials ul li img {
+			float: left;
+			padding-top: 2px;
+		}
+	div#homepage div#specials ul li.last { border: none; }
+/* Hours & Location */
+div#homepage div#hours_location p {
+	margin-bottom: 12px;
+}
+div#homepage div#hours_location .map {
+	background: url('../images/map_bg.png') no-repeat top left;
+	width: 262px;
+	height: 142px;
+	padding: 10px;
+	margin-top: 5px;
+}

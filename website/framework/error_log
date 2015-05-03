@@ -1,0 +1,101 @@
+[27-Dec-2012 05:26:22] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'kutramporuthavar.com'@'localhost' (using password: YES) in /home7/kutrampo/public_html/umware/framework/config.php on line 12
+[27-Dec-2012 05:26:46] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'kutramporuthavar.com'@'localhost' (using password: YES) in /home7/kutrampo/public_html/umware/framework/config.php on line 12
+[27-Dec-2012 05:36:40] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'kutramporuthavar.com'@'localhost' (using password: YES) in /home7/kutrampo/public_html/umware/framework/config.php on line 12
+[28-Jun-2013 20:19:54] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[28-Jun-2013 20:19:55] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[28-Jun-2013 20:19:55] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[29-Jun-2013 19:22:05] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[29-Jun-2013 19:22:05] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[29-Jun-2013 19:22:06] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Jun-2013 18:36:45] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Jun-2013 18:36:45] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Jun-2013 18:36:46] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[01-Jul-2013 17:44:49] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[01-Jul-2013 17:44:50] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[01-Jul-2013 17:44:50] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[02-Jul-2013 16:58:29] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[02-Jul-2013 16:58:34] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[02-Jul-2013 16:58:35] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[03-Jul-2013 16:44:03] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[03-Jul-2013 16:44:03] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[03-Jul-2013 16:44:03] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[04-Jul-2013 15:51:29] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[04-Jul-2013 15:51:31] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[04-Jul-2013 15:51:34] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[05-Jul-2013 15:20:39] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[05-Jul-2013 15:20:39] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[05-Jul-2013 15:20:39] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[06-Jul-2013 14:22:30] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[06-Jul-2013 14:22:30] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[06-Jul-2013 14:22:31] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[07-Jul-2013 13:40:35] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[07-Jul-2013 13:40:36] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[07-Jul-2013 13:40:37] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[08-Jul-2013 12:45:59] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[08-Jul-2013 12:46:00] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[08-Jul-2013 12:46:00] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[22-Aug-2013 20:50:15] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Oct-2013 06:05:00] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Oct-2013 06:05:00] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Oct-2013 06:05:00] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Nov-2013 05:46:01] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Nov-2013 05:46:02] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Nov-2013 05:46:02] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Nov-2013 05:46:04] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Nov-2013 05:46:05] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Nov-2013 05:46:06] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[30-Nov-2013 05:46:06] PHP Warning:  json_encode() [<a href='function.json-encode'>function.json-encode</a>]: Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[25-Jan-2014 07:49:47 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[25-Jan-2014 07:49:47 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[29-Jan-2014 12:45:40 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[29-Jan-2014 12:45:40 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[04-Feb-2014 12:50:41 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[04-Feb-2014 12:50:41 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[04-Feb-2014 12:50:41 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[04-Feb-2014 12:50:41 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[04-Feb-2014 12:50:42 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[04-Feb-2014 12:50:42 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[13-Feb-2014 11:10:06 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[13-Feb-2014 11:10:06 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[13-Feb-2014 11:10:08 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[13-Feb-2014 11:10:08 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[13-Feb-2014 11:10:10 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[13-Feb-2014 11:10:10 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[13-Feb-2014 11:10:12 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[13-Feb-2014 11:10:12 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[13-Feb-2014 11:10:14 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[13-Feb-2014 11:10:14 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[13-Feb-2014 11:10:16 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[13-Feb-2014 11:10:16 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[13-Feb-2014 11:10:18 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[13-Feb-2014 11:10:18 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[12-Mar-2014 09:13:17 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[12-Mar-2014 09:13:17 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[10-May-2014 23:20:50 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[10-May-2014 23:20:50 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[10-May-2014 23:20:51 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[10-May-2014 23:20:52 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[10-May-2014 23:20:52 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[10-May-2014 23:20:52 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[07-Aug-2014 11:47:22 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[07-Aug-2014 11:47:22 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[10-Aug-2014 09:15:53 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[10-Aug-2014 09:15:54 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[10-Aug-2014 09:15:54 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[10-Aug-2014 09:15:54 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[10-Aug-2014 09:15:54 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[10-Aug-2014 09:15:54 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[12-Aug-2014 21:40:43 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[12-Aug-2014 21:40:44 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[12-Aug-2014 21:40:45 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[12-Aug-2014 21:40:45 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[12-Aug-2014 21:40:45 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[12-Aug-2014 21:40:45 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[12-Aug-2014 21:40:45 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[12-Aug-2014 21:40:45 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[12-Aug-2014 21:40:46 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[12-Aug-2014 21:40:46 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[12-Aug-2014 21:40:46 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[12-Aug-2014 21:40:46 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46
+[12-Aug-2014 21:40:46 America/Denver] PHP Notice:  Undefined index: Thumbnail in /home7/kutrampo/public_html/umware/framework/data.php on line 25
+[12-Aug-2014 21:40:46 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home7/kutrampo/public_html/umware/framework/data.php on line 46

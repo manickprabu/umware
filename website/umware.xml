@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.5.1
+- http://www.phpmyadmin.net
+-
+- Host: localhost
+- Generation Time: Dec 26, 2012 at 09:46 PM
+- Server version: 5.5.24-log
+- PHP Version: 5.4.3
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="umware" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="projects">
+                CREATE TABLE `projects` (
+                  `Id` int(3) NOT NULL,
+                  `Name` char(50) NOT NULL,
+                  `Discription` char(250) NOT NULL,
+                  `Thumbnail` char(100) NOT NULL,
+                  `Tools` char(250) NOT NULL,
+                  `Reference` char(100) NOT NULL,
+                  PRIMARY KEY (`Id`),
+                  UNIQUE KEY `Id` (`Id`),
+                  KEY `Id_2` (`Id`),
+                  KEY `Id_3` (`Id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'umware'
+    -->
+    <database name="umware">
+        <!-- Table projects -->
+        <table name="projects">
+            <column name="Id">100</column>
+            <column name="Name">Smart Live Casino</column>
+            <column name="Discription">This is Flash Project This is Flash Project This is Flash Project This is Flash Project This is Flash Project This is Flash Project</column>
+            <column name="Thumbnail">images/sango.jpg</column>
+            <column name="Tools">&lt;li&gt;Actionscript 3.0&lt;/li&gt;&lt;li&gt;Eclipse|Flash Builder&lt;/li&gt;&lt;li&gt;AIR SDK&lt;/li&gt;&lt;li&gt;Java Socket&lt;/li&gt;</column>
+            <column name="Reference">#</column>
+        </table>
+        <table name="projects">
+            <column name="Id">101</column>
+            <column name="Name">Live Roulette</column>
+            <column name="Discription">iPad</column>
+            <column name="Thumbnail">images/sango.jpg</column>
+            <column name="Tools">&lt;li&gt;Actionscript 3.0&lt;/li&gt;&lt;li&gt;Eclipse|Flash Builder&lt;/li&gt;&lt;li&gt;AIR SDK&lt;/li&gt;&lt;li&gt;Java Socket&lt;/li&gt;</column>
+            <column name="Reference">#</column>
+        </table>
+        <table name="projects">
+            <column name="Id">102</column>
+            <column name="Name">VR Kiosk</column>
+            <column name="Discription">VR Kiosk VR Kiosk VR Kiosk</column>
+            <column name="Thumbnail">images/VRKiosk.jpg</column>
+            <column name="Tools"></column>
+            <column name="Reference">#</column>
+        </table>
+        <table name="projects">
+            <column name="Id">103</column>
+            <column name="Name">1Live Roulette</column>
+            <column name="Discription">1VR Kiosk VR Kiosk VR Kiosk</column>
+            <column name="Thumbnail">images/sango.jpg</column>
+            <column name="Tools">&lt;li&gt;Custom Web Design&lt;/li&gt;&lt;li&gt;HTML/CSS&lt;/li&gt;&lt;li&gt;Web Development&lt;/li&gt;&lt;li&gt;Bespoke Programming&lt;/li&gt;</column>
+            <column name="Reference">#</column>
+        </table>
+    </database>
+</pma_xml_export>

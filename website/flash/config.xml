@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<MsgBox visible="0"/>
+	<FullScreen x="940" y="270"/>
+	<Banner path="flash/banners/" autoPlay="true" delay="4500" navigatorX="830" navigatorY="20"> 
+		<item>Flash_Aset-02.jpg</item>
+		<item>Flash_Aset 03.jpg</item>
+		<item>Flash_Aset 04.jpg</item>
+		<item>Flash_Aset.jpg</item>
+	</Banner>
+</root>

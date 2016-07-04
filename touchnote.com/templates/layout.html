@@ -1,0 +1,80 @@
+<header id="mainHeader" fixed-header="$toggleHeader" class="hover">
+
+    <nav class="navbar">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"></button>
+          <div ui-sref="top.homepage" class="tn-logo navbar-brand"></div>
+        </div>
+
+        <div class="collapse navbar-collapse text-center" id="myNavbar">
+            <ul class="nav navbar-nav text-left">
+                <li>
+                    <a ng-href="{{legacyWebUrl}}" target="_blank" title="Go to older version touchnote.com website">Go to old site</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" ui-sref="top.feedback" title="Leave your feedback here">Like the new site? </a>
+                </li>
+                <!-- <li>
+                    <a href="javascript:void(0)" ui-sref="top.content.cards" title="Take a look at our cards">Our cards </a>
+                </li> -->
+                <li>
+                    <a href="javascript:void(0)" ui-sref="top.content.mobile" title="Send cards directly from your mobile">Mobile apps</a>
+                </li>
+
+                <div ng-include="vm.mainMenuPath"> </div>
+            </ul>
+            <!-- <ul class="nav navbar-nav navbar-right text-left" ng-include="vm.mainMenuPath"> -->
+                <!-- <div class="right" ng-include="vm.mainMenuPath"></div> -->
+            <!-- </ul> -->
+        </div>
+    </nav>
+
+</header>
+
+<div id="appView" ui-view="appView">
+</div>
+
+<footer >
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-12 social">
+
+                <a href="http://instagram.com/touchnote" target="_blank" class="btn btn-lg btn-blue circler">
+                    <div class="fa fa-instagram"></div>
+                </a>
+                <a href="http://facebook.com/touchnote" target="_blank" class="btn btn-lg btn-blue circler">
+                    <div class="fa fa-facebook"></div>
+                </a>
+                <a href="http://twitter.com/touchnote" target="_blank" class="btn btn-lg btn-blue circler">
+                    <div class="fa fa-twitter"></div>
+                </a>
+                <a href="http://www.youtube.com/user/touchnote" target="_blank" class="btn btn-lg btn-blue circler" >
+                    <div class="fa fa-youtube"></div>
+                </a>
+            </div>
+            <div class="col-sm-12">
+                <ul>
+                    <li> <a ui-sref="top.content.handler({ pageID: 'about-touchnote' })">About </a></li>
+                    <li> <a ui-sref="top.content.handler({ pageID: 'blog' })">Blog </a></li>
+                    <li> <a ui-sref="top.content.handler({ pageID: 'jobs' })">Jobs </a></li>
+                    <li> <a ui-sref="top.content.handler({ pageID: 'press' })">Press </a></li>
+                    <li> <a ui-sref="top.content.handler({ pageID: 'help' })">FAQs </a></li>
+                    <li> <a ui-sref="top.content.handler({ pageID: 'terms' })">Ts & Cs </a></li>
+                    <li> <a ui-sref="top.content.handler({ pageID: 'policy' })">Privacy </a></li>
+                    <li> <a ui-sref="top.content.handler({ pageID: 'partners' })">Partners </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="modalContainer" ng-controller="ModalController">
+    <div class="tnModalContainer animated-06">
+        <div class="tnModalClose">
+            <a href="javascript:void(0)" onclick="backModal()">
+            <span>close</span><i class="icon-cross"></i></a>
+        </div>
+        <div id="modalContentContainer"></div>
+    </div>
+</div>
+<div id="dialogContainer" ng-include="'app/modules/common/dialog/dialog.html'" ng-controller="DialogController"></div>

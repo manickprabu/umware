@@ -1,0 +1,247 @@
+<div class="order" ng-repeat="order in vm.orders " ng-controller="OrderController ">
+    <div hide-card="hidePostcard(arg, 'postcard', $index)" class="row ng-scope ng-isolate-scope">
+        <div class="row orderItem">
+            <div class="postageDetails col-sm-12">
+                <div ng-class="{ cardImage: true, 'greetingCard': order.template.cardType == 'greetingCard' }" 
+                     class="animated-06 rotateIn">
+                    <div class="image">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <div class="recipientList" ng-switch on="order.cardCount">
+
+                    <!-- Draft. No addresses specified. -->
+                    <div ng-switch-when="0">
+                        <div class="ng-binding ng-scope">No addresses specified</div>
+                    </div>
+
+                    <!-- One address -->
+                    <div ng-switch-when="1">
+                        <div class="ng-binding ng-scope text-ellipsis" style="width: 330px;">
+                            To {{ order.template.address.first_name }} 
+                        </div>
+                        <div class="ng-binding">
+                            <span ng-switch on="order.status">
+                                <span ng-switch-when="ERROR"><strong>Cancelled</strong></span>
+                                <span ng-switch-when="REJECTED"><strong>Cancelled</strong></span>
+                                <span ng-switch-default><span ng-show="selectedProduct.jobID">Card {{ selectedProduct.jobID }} - </span>Ordered</span>
+                            </span> on {{ order.template.formattedCreationDate }}
+                        </div>
+                    </div>
+
+                    <!-- More than one address -->
+                    <div ng-switch-default>
+                        <div class="ng-binding ng-scope text-ellipsis" style="width: 330px;">
+                            To {{ selectedProduct.address.first_name }} 
+                            <span ng-hide="(showOrderBack[$index] || showAddress[$index + 1000] )">and {{ order.cardCount - 1 }} other<span ng-show="((order.cardCount - 1) != 1)">s</span></span> 
+                        </div>
+                        <div class="ng-binding">
+                            <span ng-switch on="selectedProduct.status">
+                                <span ng-switch-when="ERROR"><strong>Cancelled</strong></span>
+                                <span ng-switch-when="REJECTED"><strong>Cancelled</strong></span>
+                                <span ng-switch-default><span ng-show="selectedProduct.jobID">Card {{ selectedProduct.jobID }} - </span>Ordered</span>
+                            </span> 
+                            on {{ order.template.formattedCreationDate }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- post card order   -->
+            <div class="col-sm-8">
+                <div class="perspective card-index{{$index + 1000}}" 
+                     ng-click="doFlipCard()"
+                     ng-class="{ card: true, 
+                                 portrait: order.template.orientation == 1, 
+                                 'flipped': showOrderBack[$index],
+                                 'gcrotate': order.template.cardType == 'greetingCard' }">
+                    <div class="card-container" 
+                         ng-class="{ card: true, 
+                                    'flipped': showOrderBack[$index], 
+                                    'no-flipp': !showOrderBack[$index],
+                                    'cradBackGreetingsCard': order.template.cardType == 'greetingCard' }" >
+                        <div class="figure front">
+                            <div class="pull-center loader" >
+                                <img class="spinner" src="/assets/images/spinner.gif">
+                            </div>
+                            <img ng-src="{{ order.template.thumbnail }}">
+                        </div>
+                        <div class="figure back back-style" ng-show="order.template.cardType == 'postcard'">
+                            <div class="cardBack">
+                                <div class="background {{customCardBackground()}}">
+                                    <img class="special-image"
+                                         ng-hide="selectedProduct.statusCode == 1" 
+                                         ng-src="{{ order.template.insideImage }}">
+
+                                    <div class="pull-center loader" 
+                                         ng-show="selectedProduct.statusCode == 1">
+                                        <img class="spinner" src="/assets/images/spinner.gif">
+                                    </div>
+
+                                    <touch-note-stamp product="selectedProduct" 
+                                                      ng-hide="selectedProduct.template_uuid"></touch-note-stamp>
+                                    
+                                    <div class="addressBlockContainer blank">
+                                        <address-carousel class="small" address="selectedProduct.address"></address-carousel>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra"></div>
+                    </div>
+
+                    <div class="editCardMessage pc" ng-controller="EditPCMessageCtrl" ng-show="show()">
+                        <a class="closeBtn" ng-click="close()"><i class="icon-cross"></i></a>
+                        <touchnote-custom-input 
+                            ng-model="selectedProduct.editMessage" 
+                            max-line="18" 
+                            remaining-line="remainingLine" 
+                            on-editing="onEditing"
+                            min-fontsize="11" 
+                            max-fontsize="16" 
+                            class="cardMessageTextarea" 
+                            editable="true" 
+                            strip-br="true" strip-tags="true"
+                            placeholder="'Click here to type your message'">
+                            </touchnote-custom-input>
+
+                        <div class="remainingLines margin-bottom-10" >
+                            <span ng-switch on="remainingLine">
+                                <span ng-if="remainingLine <= 2"><strong>Careful</strong>, you're running out of space</span>
+                                <span ng-if="remainingLine > 2">Please enter your message</span> 
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="statusMsg" ng-show="showOrderBack[$index]"
+                         ng-class="{'rotate':selectedProduct.orientation && order.template.cardType == 'greetingCard'}">
+                        <span ng-switch on="selectedProduct.statusCode">
+                            <span ng-if="selectedProduct.statusCode == 0"><img style="width: 12px;" class="spinner" src="/assets/images/spinner.gif">Updating your card</span>
+                            <span ng-if="selectedProduct.statusCode == 1">Card updated</span>
+                            <span ng-if="selectedProduct.statusCode == 2">Card not updated(revert text to previous version)</span>
+                        </span>
+                    </div>
+
+                    <div class="greetings-card-back" ng-show="order.template.cardType == 'greetingCard'">
+                        <div id="gc-back-inside" ng-hide="selectedProduct.editMessage">
+                            <img class="special-image" ng-src="{{ selectedProduct.insideImage }}"
+                                 ng-hide="selectedProduct.statusCode == 1">
+
+                            <div class="pull-center loader" 
+                                 ng-show="selectedProduct.statusCode == 1">
+                                <img class="spinner" src="/assets/images/spinner.gif">
+                            </div>
+                        </div>
+
+                        <div class="editCardMessage gc" ng-show="selectedProduct.editMessage" 
+                             ng-controller="EditGCMessageCtrl">
+                            <a class="closeBtn" 
+                                ng-class="{'rotate':selectedProduct.orientation}" ng-click="close()"><i class="icon-cross"></i></a>
+
+                            <touch-note-card-inside 
+                                editable="true" 
+                                show-title="false"
+                                min-fontsize="16" 
+                                rotate="selectedProduct.orientation"
+                                class="cardGCMessage" 
+                                messages="selectedProduct.editMessage">
+                                </touch-note-card-inside>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Greetings Card view -->
+                <div class="greetings-card-envelope-cover" ng-if="order.template.cardType == 'greetingCard'">
+                    <div class="timeline"></div>
+                </div>
+
+                <div class="cardBack greetings-card-envelope gc-index{{$index + 1000}}"  
+                     ng-class="{portrait: order.template.orientation == 1}" 
+                     ng-if="order.template.cardType == 'greetingCard'">
+                    <div class="gce-top">
+                        <div class="gcet-left"></div>
+                        <div class="gcet-right"></div>
+                    </div>
+                    <div id="gce-container" >
+                        <div class="gcec-from" >
+                            <h5>A card from</h5>
+                            <div class="cardFrom">{{ order.template.messages.cardFrom }}</div>
+                        </div>
+
+                        <touch-note-stamp product="selectedProduct"></touch-note-stamp>
+
+                        <div class="addressBlockContainer">
+                            <address-carousel class="small" address="selectedProduct.address"></address-carousel>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons col-sm-4">
+                <div class="row">
+                    
+                    <div class="col-sm-12 margin-bottom-10">
+
+                        <!-- Show card inside/back/front Button -->
+                        <button ng-click="flipCard()" class="btn btn-block btn-lg btn-blue" 
+                                ng-disabled="showAddress[$index + 1000]">
+                            <span ng-show="!showOrderBack[$index]" class="ex" 
+                                        ng-if="order.template.cardType == 'greetingCard'">Show inside</span>
+                                 <span  ng-show="!showOrderBack[$index]" class="ex" 
+                                        ng-if="order.template.cardType == 'postcard'">Show back</span>
+                                 <span  ng-show="showOrderBack[$index]" class="ex ng-hide">Show front</span>
+                        </button>
+
+                        <!-- Show /frontaddress Button -->
+                        <button class="hide-card-button btn btn-block btn-lg btn-blue" 
+                                ng-controller="ShowAddressBtnCtrl"
+                                ng-show="show()"
+                                ng-click="showGreetingsCardAddress($index + 1000)" 
+                                ng-bind-html="label">
+                        </button>
+
+                        <!-- Copy Card Button -->
+                        <button class="btn btn-block btn-lg btn-blue" ng-controller="CopyCardBtnCtrl" 
+                                ng-show="show()"
+                                ng-click="copyCard( order )">Copy card</button>
+
+                        <!-- Edit Button -->
+                        <button class="btn btn-block btn-lg btn-transparent" ng-click="action()"
+                                ng-controller="EditAddressBtnCtrl" ng-show="show()" ng-bind-html="label"></button>
+
+                        <!-- Edit Button -->
+                        <button class="btn btn-block btn-lg btn-transparent" ng-click="action()"
+                                ng-controller="EditMessageBtnCtrl" ng-show="show()" ng-bind-html="label"></button>
+
+                        <!-- Edit Button -->
+                        <button class="btn btn-block btn-lg btn-transparent" ng-click="flipCard()"
+                                ng-disabled="showAddress[$index + 1000]"
+                                ng-controller="EditCardBtnCtrl" ng-show="show()" ng-bind-html="label"></button>
+                        
+                        <!-- Cancel Card Button -->
+                        <button class="hide-card-button btn btn-block btn-lg btn-transparent" 
+                                ng-controller="CancelCardBtnCtrl"
+                                ng-show="show()"
+                                ng-bind-html="label"
+                                ng-click="cancelCard( order, selectedProduct, (showOrderBack[$index] || showAddress[$index + 1000]) )">
+                            
+                         </button>
+                    </div>
+
+                    <div class="col-sm-12 margin-top-10 addressBlockContainerNav" 
+                        ng-if=" (showOrderBack[$index] || showAddress[$index + 1000] ) &&
+                                order.recipients.getLength() > 1 ">
+                        <address-carousel class="small" recipients="order.recipients" show-name-only="true"
+                            selected-person-id="selected.persionID"></address-carousel>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

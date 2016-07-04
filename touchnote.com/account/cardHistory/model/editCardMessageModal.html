@@ -1,0 +1,42 @@
+<div id="editCardMessage" class="tnModal___" ng-class="{'gc':vm.greetingCard}">
+    <div class="margin-bottom-10">
+        <h3 class="title">Please update your message </h3>
+    </div>
+
+    <span class="margin-bottom-15">
+        <touchnote-custom-input 
+                ng-model="vm.message" 
+                max-line="13" 
+                remaining-line="remainingLine" 
+                min-fontsize="16" 
+                max-fontsize="26" 
+                class="cardMessageTextarea" 
+                editable="true" 
+                strip-br="true" strip-tags="true"
+                ng-show="vm.postcard"
+                placeholder="'Click here to type your message'">
+                </touchnote-custom-input>
+
+        <touch-note-card-inside 
+                editable="true" 
+                show-title="false"
+                min-fontsize="16" 
+                class="cardGCMessage" 
+                rotate="vm.rotate" 
+                ng-show="vm.greetingCard"
+                messages="vm.message">
+                </touch-note-card-inside>
+    </span>
+
+    <div class="remainingLines margin-bottom-10" >
+        <span ng-switch on="remainingLine">
+            <span ng-if="remainingLine <= 2"><strong>Careful</strong>, you're running out of space</span>
+            <span ng-if="remainingLine > 2">Please enter your message</span> 
+        </span>
+    </div>
+
+    <div class="row">
+        <button ng-click="dismiss()" class="btn btn-lg" >Cancel</button>
+        <button ng-click="submit()" class="btn btn-lg red" >Update</button>
+    </div>
+</div>

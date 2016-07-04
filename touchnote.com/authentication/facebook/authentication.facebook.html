@@ -1,0 +1,27 @@
+<div id="signInForm" class="tnModal">
+
+    <div class="row">
+        <div class="row">
+            <span ng-class="{ message: true, error: vm.errorMessage }">{{ vm.message }}</span>
+        </div>
+
+        <form name="vm.signInForm" class="signin" role="form" novalidate>
+            <div class="col-sm-12">
+                <i  class="fa spinner fa-refresh fa-spin fa-spinner"></i>
+                <h3 class="thumbnail-label">{{vm.facebook.name}} </h3>
+            </div>
+
+            <div class="col-sm-12">
+                <p class="special"> Have an account already? 
+                <a tabindex="8" ui-sref="top.authentication.signIn">Sign in</a></p>
+            </div>
+
+            <div class="col-sm-12 separate"></div>
+            <div class="col-sm-12">
+                <p class="special margin-bottom-0">New here?
+                    <a tabindex="14" ui-sref="top.authentication.register"> Sign up</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>

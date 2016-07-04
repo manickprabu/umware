@@ -1,0 +1,31 @@
+<div class="tab-pane" >
+    <div class="row animated600 fadeIn" ng-hide="vm.socialUser">
+        
+        <div ng-include="'app/modules/account/buycredit/account.creditback.view.html'" ng-show="step == 1"></div>
+
+        <div id="tapGroup" ng-show="step == 2" ng-controller="CreditPaymentController as vm">
+            <div class="btn-group" data-toggle="buttons-radio">
+                <button type="button" class="btn btn-primary transparent" ng-class="{'active':vm.paymentMethod == 'cc'}" role="cc">Credit or debit card</button>
+                <button type="button" class="btn btn-primary transparent" ng-class="{'active':vm.paymentMethod == 'pp'}" role="pp">PayPal</button>
+            </div>
+
+            <div class="tab-content cc" ng-class="{'active':vm.paymentMethod == 'cc'}"
+                 ng-include="'app/modules/payment/creditCard/payment.creditCard.html'" ></div> 
+            <div class="tab-content pp" ng-class="{'active':vm.paymentMethod == 'pp'}"
+                ng-include="'app/modules/payment/paypal/payment.paypal.html'" ></div>
+
+            <div class="buttons text-center">
+                <button class="wide btn-blue" ng-click="goto(1)">
+                    <span>Back</span>
+                </button>
+
+                <button class="wide btn-pink" ng-click="processPayment()" ng-hide="vm.imageURL" ng-class="{ disabled: !vm.formReady }">
+                    <i ng-show="vm.processingPayment" style="left: 8px;" class="fa fa-refresh fa-spin fa-spin-pos"></i>
+                    <span ng-show="vm.processingPayment">Processing</span>
+                    <span ng-hide="vm.processingPayment">Pay</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>

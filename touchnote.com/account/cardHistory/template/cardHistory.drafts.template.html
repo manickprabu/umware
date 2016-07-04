@@ -1,0 +1,155 @@
+<div class="drafts">
+    <div class="draft" ng-repeat="draft in vm.drafts | orderBy: '-lastUpdate'" ng-controller="DraftController"
+        ng-class="{'greetings-card-draft' : draft.template.cardType == 'greetingCard'}"
+        ng-show="draft.template.validThumbnail">
+        <div hide-card="hidePostcard(arg, 'postcard', $index)" class="row ng-scope ng-isolate-scope">
+            <div class="row">
+                <div class="postageDetails col-sm-12">
+                    <div ng-class="{ cardImage: true, 'greetingCard': draft.template.cardType == 'greetingCard'}" 
+                         class="animated-06 rotateIn">
+                            <div class="image">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="recipientList" ng-switch on="draft.recipientCount">
+
+                        <!-- Draft. No addresses specified. -->
+                        <div ng-switch-when="0">
+                            <div class="ng-binding ng-scope">No addresses specified</div>
+                            <div class="ng-binding">Last updated {{ draft.formattedLastUpdate }}</div>
+                        </div>
+
+                        <!-- One address -->
+                        <div ng-switch-when="1">
+                            <div class="ng-binding ng-scope">To {{ draft.firstRecipient().name() }}</div>
+                            <div class="ng-binding" ng-if="draft.status==='NEW'">Last updated {{ draft.formattedLastUpdate }}</div>
+                            <div class="ng-binding" ng-if="draft.status==='PROCESSING'">Just loading your lovely card...</div>
+                        </div>
+
+                        <!-- More than one address -->
+                        <div ng-switch-default>
+                            <div class="ng-binding ng-scope">To {{ selectedProduct.firstRecipient().name() }} 
+                                <span ng-hide="showBack[$index]">and {{ draft.recipientCount - 1 }} other<span ng-show="((draft.recipientCount - 1) != 1)">s</span></span>
+                            </div>
+                            <div class="ng-binding" ng-if="draft.status==='NEW'">Last updated {{ draft.formattedLastUpdate }}</div>
+                            <div class="ng-binding" ng-if="draft.status==='PROCESSING'">Just loading your lovely card...</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card view -->
+                <div class="col-sm-8" 
+                    ng-click="showCardContent($event)">
+                    <div class="perspective" 
+                         ng-click="flipCard()"
+                         ng-class="{ 'portrait': draft.template.orientation == 1, 'gcrotate': draft.template.cardType == 'greetingCard', fading:draft.status==='PROCESSING'}">
+                        <div class="card-container" ng-class="{ card: true, 
+                                                            'flipped': showBack[$index], 
+                                                            'no-flipp': !showBack[$index],
+                                                            'cradBackGreetingsCard': draft.template.cardType == 'greetingCard',}" >
+                            <div class="figure front">
+                                <div class="pull-center loader" >
+                                    <img class="spinner" src="/assets/images/spinner.gif">
+                                </div>
+                                <img ng-src="{{ draft.template.thumbnail }}">
+                            </div>
+                            <div class="figure back back-style">
+                                <div class="cardBack">
+                                    <div class="background" ng-if="draft.template.cardType != 'greetingCard'">
+                                        
+                                        <touchnote-custom-input ng-model="draft.template.messages.primary" max-line="13" scale-to-fit="true"
+                                            min-fontsize="10" max-fontsize="20" class="cardMessageTextarea" editable="false" >
+                                        </touchnote-custom-input>
+                                        <touch-note-stamp product="draft.template"></touch-note-stamp>
+                                        <div class="addressBlockContainer blank">
+
+                                            <address-carousel class="small" recipients="selectedProduct.recipients"></address-carousel>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ng-class="{'gc':selectedProduct.useFrame()}" -->
+                        <div class="greetings-card-back messages" ng-if="draft.template.cardType == 'greetingCard'" >
+                            <div id="gc-back-inside" >
+                                <div class="message1" ng-bind-html="getMessage12(selectedProduct.messages)"></div>
+
+                                <!-- ng-class="{'gc':selectedProduct.useFrame()}" -->
+                                <touchnote-custom-input ng-model="selectedProduct.messages.message3" max-line="2" min-fontsize="19" max-fontsize="19" class="message2" editable="false" strip-br="true" scale-to-fit="true" >
+                                </touchnote-custom-input>
+                                <touchnote-custom-input ng-model="selectedProduct.messages.message4" max-line="5" min-fontsize="12" max-fontsize="12" class="message3" editable="false" strip-br="true" scale-to-fit="true">
+                                </touchnote-custom-input>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Greetings Card view -->
+                    <!-- <div class="greetings-card-envelope-cover"  ng-if="draft.template.cardType == 'greetingCard'">
+                        <div class="timeline"></div>
+                    </div> -->
+                    <div class="cardBack greetings-card-envelope gc-index{{$index}} ng-hide"  ng-if="draft.template.cardType == 'greetingCard'">
+                        <div class="gce-top">
+                            <div class="gcet-left"></div>
+                            <div class="gcet-right"></div>
+                        </div>
+                        <div id="gce-container" >
+                            <div class="gcec-from">
+                                <h5>A card from</h5>
+                                <span class="cardFrom">{{ draft.template.messages.cardFrom }}</span>
+                            </div>
+
+                            <touch-note-stamp product="draft.template"></touch-note-stamp>
+
+                            <div class="addressBlockContainer">
+                                <address-carousel class="small" recipients="draft.recipients"></address-carousel>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls view -->
+                <div class="buttons col-sm-4">
+                    <div class="row">
+                        <div class="col-sm-12 margin-bottom-10">
+                        
+                            <!-- Continue Card Button -->
+                            <button class="btn btn-block btn-lg btn-pink" ng-click="showDraft(draft.orderID)" ng-disabled="draft.status==='PROCESSING'">Continue card</button>
+                            
+                            <!-- Show back/inside Card Button -->
+                            <button ng-click="flipCard()" ng-disabled="showAddress[$index] || draft.status==='PROCESSING'" class="btn btn-block btn-lg btn-blue">
+                                <span ng-show="!showBack[$index]" class="ex" 
+                                      ng-if="draft.template.cardType != 'greetingCard'">Show back</span>
+                                <span ng-show="!showBack[$index]" class="ex" 
+                                      ng-if="draft.template.cardType == 'greetingCard'">Show inside</span>
+                                <span ng-show="showBack[$index]" class="ex ng-hide">Show front</span>
+                            </button>
+
+                            <!-- Copy Card Button -->
+                            <button class="btn btn-block btn-lg btn-blue" 
+                                    ng-click="copyCard( draft, true )" ng-disabled="draft.status==='PROCESSING'">Copy card</button>
+                            
+                            <!-- Delete Button -->
+                            <button class="hide-card-button btn btn-block btn-lg btn-transparent" 
+                                    ng-show="!showBack[$index]"
+                                    ng-click="deleteDraft(draft.orderID)"
+                                    ng-disabled="draft.status==='PROCESSING'">Delete draft</button>
+                        </div>
+
+                        <div class="col-sm-12 margin-bottom-10 addressBlockContainerNav" 
+                            ng-if="showBack[$index] && draft.recipients.getLength()">
+                            <address-carousel class="small" recipients="draft.recipients" 
+                                selected-person-id="selected.persionID"></address-carousel>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

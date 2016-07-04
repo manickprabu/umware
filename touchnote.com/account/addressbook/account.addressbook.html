@@ -1,0 +1,49 @@
+<div class="tab-pane" id="contactSelect">
+    <div class="row animated600 fadeIn" ng-hide="vm.socialUser">
+        <div class="col-sm-12 margin-bottom-15">
+            <h2 class="margin-0">Address book</h2>
+        </div>
+
+        <div class="col-sm-12 margin-bottom-15 filters">
+
+            <div class="col-sm-8 row">
+              <button class="btn filterBtn" ng-class="{'selected': item == vm.selectedFilter}" 
+                      ng-click="filterBy(item)" ng-repeat="item in vm.filterList">
+                <span > {{item.label}}</span>
+              </button>
+            </div>
+
+            <div class="col-sm-4 pull-right">
+              <div class="search">
+                <span class="fa fa-search"></span>
+                <input placeholder="Search" type="search" class="form-control" ng-model="searchText">
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 fix-height scroll-fix" id="addressBookSelect">
+            <!-- add new address -->
+            <div class="add-adress-box special" ng-click="newAddress()">
+                <button>
+                    <i class="icon-plus"></i><span>Add a new address </span>
+                </button>
+            </div>
+
+            <div class="add-adress-box" current-page="currentPage"
+                dir-paginate="contact in vm.contacts | orderBy:'name()' | orderBy:'address().addressType' | filter: searchBy | filterByLetter:vm.filterKey | itemsPerPage: pageSize">
+                <div class="contactName text-ellipsis">{{ contact.name() }} <span ng-if="contact.address().addressType == 1"> (me)</span></div>
+                <div class="address text-ellipsis"> {{contact.address().line1}}</div>
+                <a class="editButton" ng-click="editAddress(contact)">Edit</a>
+                <a class="deleteButton" ng-if="contact.address().addressType == 4" ng-click="deleteAddress(contact)">Delete</a>
+            </div>
+      </div>
+
+      <div class="col-sm-12 text-left">
+          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" 
+              template-url="app/modules/templates/dirPagination.tpl.html"></dir-pagination-controls>
+      </div>
+
+
+    </div>
+</div>
+

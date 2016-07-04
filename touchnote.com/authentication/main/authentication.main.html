@@ -1,0 +1,19 @@
+<div id="authenticationModal" class="tnModal">
+    <div class="col-sm-12">
+        <div class="thumbnail" ng-hide="$state.includes('top.authentication.homeAddress')">
+            <img src="/assets/images/signin_icon.png" alt="login icon"/>
+        </div>
+    </div>
+    <h3 class="thumbnail-label">Let's make people smile!</h3>
+
+    <div class="col-sm-12">
+        <div class="jumbotron margin-bottom-15 padding-30">
+
+            <div ui-view="authenticationView">
+                <button tabindex="1" class="btn btn-blue btn-lg btn-block margin-bottom-30" ui-sref="top.authentication.register">Sign me up</button>
+                <button tabindex="2" class="btn btn-transparent btn-lg btn-block" ui-sref="top.authentication.signIn">Sign in to my account</button>
+            </div>
+
+        </div>
+    </div>
+</div>

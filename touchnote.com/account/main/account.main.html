@@ -1,0 +1,47 @@
+﻿<div id="account">
+    <div class="subHeader">
+        <div class="mainTitle">Hi {{ vm.user.first_name }}</div>
+    </div>
+    <div class="accountContainer">
+
+        <div class="header">
+            <touch-note-stamp></touch-note-stamp>
+            <div class="welcomeMessage">Hiya {{ vm.user.first_name }}</div>
+            <div class="creditStatement">
+                <span ng-switch on="credits">
+                    <span ng-switch-when="0">You have no credits.</span>
+                    <span ng-switch-when="1">You have <strong>1</strong> credit.</span>
+                    <span ng-switch-default>You have <strong>{{ credits }}</strong> credits.</span>
+                </span>
+            </div>
+            <div>
+                <!-- <a ui-sref="top.creditPacks">Buy a credit pack and save money <i class="icon-arrow-right2" style="font-size: 0.66rem"></i></a> -->
+            </div>
+        </div>
+
+        <div class="row start-card">
+            <div class="col-md-6">
+                <button ng-click="startCard('PC')" class="half big btn-pink">Start a postcard</button>
+            </div>
+            <div class="col-md-6">
+                <button ng-click="startCard('GC')"  class="half big btn-blue">Start a greeting card</button>
+            </div>
+        </div>
+
+        <div>
+            <nav class="tabbedNav">
+                <ul>
+                    <li ui-sref="top.account.cardHistory" ui-sref-active="active">My cards</li>
+                    <li ui-sref="top.account.settings" ui-sref-active="active">Settings</li>
+                    <li ui-sref="top.account.addressbook" ui-sref-active="active">Address book</li>
+                    <li ui-sref="top.account.buycredit" ui-sref-active="active">Buy credits</li>
+                </ul>
+            </nav>
+
+            <div class="tabContent">
+                <div ui-view="accountContent"></div>
+            </div>
+        </div>
+
+    </div>
+</div>

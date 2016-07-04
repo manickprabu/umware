@@ -1,0 +1,74 @@
+<div id="signInForm" class="tnModal">
+    
+    <div class="row">
+        <span ng-class="{ message: true, error: vm.errorMessage }">{{ vm.message }}</span>
+    </div>
+
+    <div class="row">
+        <form name="vm.signInForm" class="signin" role="form" novalidate>
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input  ng-pattern="vm.pattern.email" 
+                            ng-trim="false" 
+                            tabindex="9" type="text"
+                            ng-model="vm.signInForm.email" 
+                            required touch-note-input
+                            name="Email" 
+                            ng-class="{error: vm.signInForm.validated && vm.signInForm.Email.$error.required}"/>
+                            
+                    <label placeholder="Email" alt="Email"></label>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input  tabindex="10" 
+                            type="password" 
+                            ng-model="vm.signInForm.password" 
+                            required ng-trim="false" 
+                            no-space ng-minlength="6" maxlength="25" 
+                            touch-note-input
+                            name="Password" 
+                            ng-class="{error: vm.signInForm.validated && vm.signInForm.Password.$error.required}"/>
+
+                    <label placeholder="Password" alt="Password"></label>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <p class="special margin">
+                    Forgotten your password?
+                    <a tabindex="11" ui-sref="top.authentication.forgottenPassword"> 
+                    Click here 
+                    </a>
+                </p>
+            </div>
+            
+            <div class="col-sm-12 margin">
+                <p>
+                    <label>Sign me out after an hour?&nbsp;&nbsp;
+                        <input type="checkbox" ng-model="vm.rememberMe">
+                    </label>
+                </p>
+            </div>
+            
+            <div class="col-sm-12">
+                <button tabindex="12" type="submit" class="btn btn-blue btn-lg btn-block" ng-click="signInForm()">
+                    <i ng-show="vm.showProgress" class="fa fa-refresh fa-spin fa-spinner"></i>
+                    Sign in
+                </button>
+            </div>
+            <div class="col-sm-12" >
+                <p class="special">Or
+                    <a tabindex="13" ng-click="signInFacebook()"> Sign in via Facebook</a>
+                </p>
+            </div>
+            <div class="col-sm-12 separate"></div>
+            <div class="col-sm-12">
+                <p class=" margin-bottom-0">New here?
+                    <a tabindex="14" ui-sref="top.authentication.register"> Sign up</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>

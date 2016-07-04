@@ -1,0 +1,196 @@
+﻿<div class="tab-pane">
+    <div class="row animated600 fadeIn" ng-hide="vm.socialUser">
+        <div class="col-sm-12 margin-bottom-15">
+            <h2 class="margin-0">Your account details</h2>
+        </div>
+        <div class="col-sm-12">
+            <p>Current email: {{ vm.email }}</p>
+        </div>
+        <form name="vm.newEmail" role="form" novalidate class="col-sm-12 margin-bottom-30" >
+            <div class="row">
+                <div class="col-sm-6">
+                
+                    <div class="input-group" >
+                        <input  tabindex="1" 
+                                ng-model="vm.newEmail.email" 
+                                type="text" 
+                                name="Email" 
+                                touch-note-input
+                                ng-pattern="vm.pattern.email" 
+                                ng-class="{error: vm.newEmail.validated && vm.newEmail.Email.$error.required}"
+                                ng-trim="false" 
+                                maxlength="50" required />
+
+                        <label placeholder="New email" alt="Enter your new email"></label>
+                    </div>
+                </div>
+                <div style="height:1px;" class="col-sm-12"></div>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <input tabindex="3"
+                               ng-model="vm.newEmail.currentPassword"
+                               type="password"
+                               name="NewEmailCurrentPassword"
+                               required ng-trim="false"
+                               no-space ng-minlength="6"
+                               maxlength="25"
+                               touch-note-input
+                               ng-class="{error: vm.newEmail.validated && vm.newEmail.CurrentPassword.$error.required}"/>
+
+                        <label placeholder="Current password" alt="Enter current password"></label>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <button tabindex="2" ng-click="changeEmail()" type="submit" class="btn btn-lg btn-blue btn-block" >
+                        <span ng-show="vm.updatingEmail">
+                            <i class="fa fa-refresh fa-spin fa-spin-pos"></i> Updating...
+                        </span>
+                        <span ng-hide="vm.updatingEmail">
+                            Update    
+                        </span>
+                        
+                    </button>
+                </div>
+                <div class="col-sm-12 error" ng-show="vm.newEmail.errorMessage">{{vm.newEmail.errorMessage}}</div>
+            </div>
+        </form>
+
+        <div class="col-sm-12 margin-bottom-10">
+            <h2><strong>Your password:</strong></h2>
+        </div>
+        <div class="col-sm-12 margin-bottom-10">* Your new password must be 8 characters long and must contain a capital letter and a number.</div>
+
+        <form name="vm.changePassword" role="form" novalidate class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <input tabindex="3" 
+                                ng-model="vm.changePassword.currentPassword" 
+                                type="password"
+                                name="CurrentPassword" 
+                                required ng-trim="false" 
+                                no-space ng-minlength="6" 
+                                maxlength="25" 
+                                touch-note-input
+                                ng-class="{error: vm.changePassword.validated && vm.changePassword.CurrentPassword.$error.required}"/>
+                        
+                        <label placeholder="Current password" alt="Enter current password"></label>
+                    </div>
+                </div>
+                <div style="height:1px;" class="col-sm-12"></div>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <input  tabindex="4" 
+                                ng-model="vm.changePassword.newPassword" type="password" 
+                                maxlength="25" required 
+                                ng-trim="false"
+                                name="NewPassword" 
+                                no-space touch-note-input 
+                                ng-pattern="vm.pattern.password" 
+                                ng-class="{error: vm.changePassword.validated && vm.changePassword.NewPassword.$error.required}"/>
+
+                        <label placeholder="New password" alt="Enter new password"></label>
+                    </div>
+                </div>
+                <div style="height:1px;" class="col-sm-12"></div>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <input  tabindex="4" 
+                                ng-model="vm.changePassword.confirmPassword" 
+                                type="password" 
+                                maxlength="25" required 
+                                ng-trim="false" 
+                                name="ConfirmPassword" 
+                                no-space touch-note-input 
+                                ng-pattern="vm.pattern.password"
+                                ng-class="{error: vm.changePassword.validated && vm.changePassword.ConfirmPassword.$error.required}"/>
+                        
+                        <label placeholder="Confirm password" alt="Confirm your new password"></label>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <button ng-click="changePassword()" tabindex="5" type="submit" class="btn btn-lg btn-blue btn-block">
+                        <span ng-show="vm.updatingPassword">
+                            <i class="fa fa-refresh fa-spin fa-spin-pos"></i> Updating...
+                        </span>
+                        <span ng-hide="vm.updatingPassword">
+                            Update    
+                        </span>
+                    </button>
+                </div>
+                <div class="col-sm-12"></div>
+
+                <div class="col-sm-12 error pull-left" ng-show="passswordMsg"> {{passswordMsg}} </div>
+                
+            </div>
+        </form>
+    </div>
+    <div class="devider" ng-hide="vm.socialUser"></div>
+
+
+    <div class="row animated600 fadeIn settings">
+        <div class="col-sm-12 margin-bottom-15">
+            <h2 class="margin-0">Your address</h2>
+        </div>
+
+        <form novalidate class="col-sm-12" name="vm.addressForm">
+        <div id="addAddressForm" class="row">
+
+            <div class="col-sm-12">
+                <select ng-options="item.key as item.value for item in vm.countries | orderBy:'value' | popularCountries" ng-model="vm.address.countryID" class="col-sm-6"></select>
+            </div>
+
+            <div ng-repeat="field in vm.fields" class="field " ng-switch on="field.name">
+                <span ng-switch-when="countryName">
+                    <!-- <select ng-options="item.key as item.value for item in field.data | orderBy:'value'" ng-model="vm.address.countryID"></select> -->
+                </span>
+                <div class="col-sm-6" ng-switch-when="postalCode">
+                    <div class="input-group">
+                        <input  type="text" 
+                                maxlength="10"
+                                upper-case required
+                                name="{{'Address'+field.name}}"
+                                ng-model="vm.address[field.name]" 
+                                ng-change="checkFormValidity()" 
+                                ng-pattern="field.pattern" 
+                                touch-note-input
+                                ng-class="{error: isRequiredField(field) }"/>
+                        
+                        <label placeholder="{{ field.placeholder }}" alt="{{ field.placeholder }}"></label>
+                    </div>
+                </div>
+                
+                <div ng-switch-default class="col-sm-6">
+                    <div class="input-group">
+                        <input  type="text" 
+                                maxlength="25" 
+                                ng-model="vm.address[field.name]" required="false"
+                                ng-change="checkFormValidity()" 
+                                ng-pattern="field.pattern" 
+                                touch-note-input
+                                name="{{'Address'+field.name}}"
+                                ng-class="{error: isRequiredField(field) }"/>
+
+                        <label placeholder="{{ field.placeholder }}" alt="{{ field.placeholder }}"></label>
+                    </div>
+
+                </div>
+                <div style="height:1px;" class="col-sm-12" ng-switch-default></div>
+            </div>
+
+            <div class="col-sm-6">
+                <button ng-click="saveAddress()" class="btn btn-block btn-lg btn-blue save-btn">
+                    <span ng-show="vm.saving">
+                        <i class="fa fa-refresh fa-spin fa-spin-pos"></i> Updating...
+                    </span>
+                    <span ng-hide="vm.saving">Update</span>
+                </button>
+            </div>
+
+            <div class="col-sm-12 error margin-bottom-10" ng-show="vm.homeAddressError"> {{vm.homeAddressError}} </div>
+        </div>
+        </form>
+    </div>
+</div>

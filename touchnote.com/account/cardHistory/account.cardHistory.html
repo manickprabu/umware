@@ -1,0 +1,24 @@
+﻿<div id="cardHistory">
+
+    <div class="timeline"></div>
+
+    <!-- <div class="row no-card" ng-show="vm.drafts.length == 0 && vm.orders.length == 0">
+        You haven't created a card.
+    </div> -->
+
+    <div ng-include="'app/modules/account/cardHistory/template/cardHistory.drafts.template.html'" ></div>
+
+    <div>
+    
+        <div class="pull-center" style="margin-top: 30px;" ng-show="loadingHistory">
+            <i  class="fa spinner fa-refresh fa-spin fa-spinner"></i>
+        </div>
+        <div ng-include="'app/modules/account/cardHistory/template/cardHistory.orders.template.html'" ></div>
+
+        <div class="showMoreOrders" ng-show="showMoreCardBtn" >
+            <button class="btn btn-blue" ng-click="loadOnScroll()" >
+                <i class="fa fa-arrow-down" aria-hidden="true"></i> Show more orders
+            </button>
+        </div>
+    </div>
+</div>

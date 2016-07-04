@@ -1,0 +1,75 @@
+<div id="registerForm" class="tnModal">
+    <div class="row">
+        <span ng-class="{ message: true, error: vm.errorMessage }">{{ vm.message }}</span>
+    </div>
+
+        <form name="vm.signUpForm" role="form" class="signup" novalidate>
+            <div class="input-group">
+                <input  name="signUpName" 
+                        tabindex="3" type="text" 
+                        ng-model="vm.signUpForm.name" 
+                        maxlength="25" 
+                        required touch-note-input
+                        ng-class="{error: vm.signUpForm.validated && vm.signUpForm.signUpName.$error.required}"/>
+
+                <label placeholder="First Name" alt="First Name"></label>
+            </div>
+            <p ng-show="vm.signUpForm.$submitted && vm.signUpForm.signUpName.$error.required" 
+                class="text-danger">name required!</p>
+
+            <div class="input-group">
+                <input  name="signUpSurname" 
+                        tabindex="4" type="text"
+                        ng-model="vm.signUpForm.surname" 
+                        maxlength="25"
+                        required touch-note-input
+                        ng-class="{error: vm.signUpForm.validated && vm.signUpForm.signUpSurname.$error.required}"/>
+
+                <label placeholder="Last Name" alt="Last Name"></label>
+            </div>
+            <p ng-show="vm.signUpForm.$submitted && vm.signUpForm.signUpSurname.$error.required" class="text-danger">Surname required!</p>
+            
+            <div class="input-group">
+                <input  name="signUpEmail" 
+                        ng-minlength="6" ng-trim="false" 
+                        tabindex="5"
+                        ng-pattern="vm.pattern.email"
+                        type="text" 
+                        ng-model="vm.signUpForm.email" 
+                        maxlength="50" 
+                        required touch-note-input
+                        ng-class="{error: vm.signUpForm.validated && vm.signUpForm.signUpEmail.$error.required}"/>
+
+                <label placeholder="Email" alt="Email"></label> 
+            </div>
+
+            <p ng-show="vm.signUpForm.$submitted && vm.signUpForm.signUpEmail.$error.required" class="text-danger">incorrect email format!</p>
+            <p ng-show="vm.signUpForm.$submitted && vm.signUpForm.signUpEmail.alert" class="text-danger">email name exist!</p>
+
+            <div class="input-group">
+                <input  name="signUpPassword" 
+                        tabindex="6" type="password" 
+                        ng-model="vm.signUpForm.password" 
+                        ng-trim="false" 
+                        no-space="" required
+                        touch-note-input
+                        maxlength="25" 
+                        ng-pattern="vm.pattern.password"
+                        ng-class="{error: vm.signUpForm.validated && vm.signUpForm.signUpPassword.$error.required}"/>
+
+                <label placeholder="Password" alt="Password (8 characters, capital letter and number)"></label>
+            </div>
+            <button tabindex="7" type="submit" class="btn btn-blue btn-lg btn-block" ng-click="signUpFormSubmit()">
+                <i ng-show="vm.spinButton" class="fa fa-refresh fa-spin fa-spinner"></i>
+                Sign me up
+            </button>
+            
+            <p class="special"> Have an account already? <a tabindex="8" ui-sref="top.authentication.signIn">Sign in</a></p>
+            <div id="term-sign">
+                <p class="margin-bottom-0">
+                    By signing up you agree to our <a ng-click="openTermsCondis()" > terms and conditions</a>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>

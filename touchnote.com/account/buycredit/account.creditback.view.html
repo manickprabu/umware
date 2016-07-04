@@ -1,0 +1,45 @@
+<div id="creditPacks" ng-controller="CreditPacksController as vm">
+
+    <div class="col-sm-12 pull-center loading" ng-show="vm.loading" >
+        <img class="spinner" src="/assets/images/spinner.gif">
+    </div>
+
+    <div ng-hide="vm.loading">
+        <div class="col-sm-12 margin-bottom-15">
+            <h2 class="margin-0">Save money with a credit pack</h2>
+        </div>
+
+        <div>
+            You currently have 
+            <span ng-switch on="credits">
+                <span ng-switch-when="0">0 credits - Time for a top up?</span>
+                <span ng-switch-when="1"><strong>{{ credits }}</strong> credit ready to spend!</span>
+                <span ng-switch-default> <strong>{{ credits }}</strong> credits ready to spend!</span>
+            </span>
+        </div>
+
+         <div class="optionsContainer margin-bottom-30" >
+            <div class="creditPackOptions">
+                <touch-note-credit-pack ng-repeat="pack in vm.creditPacks track by $index" 
+                        index="$index" pack='pack' selected-credit-pack="vm.selectedCreditPack" 
+                        set-credit-pack="setCreditPack">
+                </touch-note-credit-pack>
+            </div>
+        </div>
+
+        <div class="margin-bottom-15  ng-hide"> Want to go large? Click for
+            <a ng-click="selectCreditPackAuto(vm.extraBack[0])"> {{ vm.extraBack[0].creditCount }} credits</a> ({{vm.extraBack[0].price | currency:vm.currencySymbol:2 }} - save {{ (vm.backSavings(vm.extraBack[0])) | currency:vm.currencySymbol:2 }}) or 
+
+            <a ng-click="selectCreditPackAuto(vm.extraBack[1])"> {{ vm.extraBack[1].creditCount }} credits</a> ({{(vm.extraBack[1].price) | currency:vm.currencySymbol:2 }} - save {{ (vm.backSavings(vm.extraBack[1]) | currency:vm.currencySymbol:2) }})
+        </div>
+
+        <div class="bottom">
+            <div class="actionButtons">
+                <div class="buttons">
+                    <button class="wide btn-pink" ng-click="payForCredits()">Buy credits</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

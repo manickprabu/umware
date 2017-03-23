@@ -1,0 +1,76 @@
+
+<div>
+    <!-- Exclusive At Launch -->
+    <div data-ng-if="conceptProposalPlatformController.show(conceptProposalPlatformController.fields.exclusiveAtLaunch)">
+        <h2 class="section-header" message-bundle="{{conceptProposalPlatformController.fields.exclusiveAtLaunch + '.title'}}"></h2>
+        <p class="section-intro" message-bundle="{{conceptProposalPlatformController.fields.exclusiveAtLaunch + '.introduction'}}"></p>
+
+        <!-- Exclusive Content -->
+        
+        <div data-concept-proposal-row-field="{{conceptProposalPlatformController.fields.exclusiveAtLaunch}}">
+            <div shared-radio="conceptProposalPlatformController.exclusiveAtLaunch"></div>
+        </div>
+    </div>
+
+
+    <!-- Timeline -->
+    <div data-ng-if="conceptProposalPlatformController.show(conceptProposalPlatformController.fields.plannedRegions)">
+        <h2 class="section-header" message-bundle="proposal.plannedPlatforms.timeline.title"></h2>
+        <p class="section-intro" message-bundle="proposal.plannedPlatforms.timeline.introduction"></p>
+
+        <div ng-include="'app/components/concept-platform/partial/platform-planned-regions-edit.html'" ></div>
+    </div>
+
+
+    <!-- Languages Distribution Media -->
+    <div ng-controller="platformLanguageDistributionController as vm">
+        <h2 class="section-header" message-bundle="proposal.plannedPlatforms.languagesDistributionMedia.title"></h2>
+        <p class="section-intro" message-bundle="proposal.plannedPlatforms.languagesDistributionMedia.introduction"></p>
+
+        <div data-concept-proposal-row-field="{{vm.fields.plannedLanguages}}" id="PlannedLanguages">
+            <div shared-dropdown="vm.plannedLanguages" multi-select="true"></div>
+        </div>
+        <div data-concept-proposal-row-field="{{vm.fields.businessModel}}">
+            <div shared-dropdown="vm.businessModel"></div>
+        </div>
+
+
+        <div data-concept-proposal-row-field="{{vm.fields.plannedDistributionMedia}}">
+            <div data-shared-checkbox="vm.plannedDistributionMedia"></div>
+        </div>
+        <div data-concept-proposal-row-field="{{vm.fields.offlineMultiplayer}}">
+            <div shared-radio="vm.config[vm.fields.offlineMultiplayer]"></div>
+        </div>
+         <div data-concept-proposal-row-field="{{vm.fields.onlineMultiplayer}}">
+            <div shared-radio="vm.config[vm.fields.onlineMultiplayer]"></div>
+        </div>
+        <div data-concept-proposal-row-field="{{vm.fields.dlcIntension}}" >
+            <div data-concept-proposal-text-field="{{vm.fields.dlcIntension}}"></div>
+        </div>
+    </div>
+
+
+    <!-- Planned Peripherals -->
+    <div data-ng-if="conceptProposalPlatformController.show(conceptProposalPlatformController.fields.plannedPeripherals)">
+
+        <h2 class="section-header" message-bundle="proposal.plannedPlatforms.peripheralUsage.title"></h2>
+        <p class="section-intro" message-bundle="proposal.plannedPlatforms.peripheralUsage.introduction"></p>
+
+        <div ng-include="'app/components/concept-platform/partial/platform-planned-peripherals.html'" ></div>
+    </div>
+
+
+    <!-- Planned Features -->
+    <div data-ng-if="conceptProposalPlatformController.show(conceptProposalPlatformController.fields.plannedFeatures)"
+         data-ng-controller="platformProposedFunctionalityEditController as vm">   
+        <h2 class="section-header" message-bundle="proposal.plannedPlatforms.functionalityUsage.title"></h2>
+        <p class="section-intro" message-bundle="proposal.plannedPlatforms.functionalityUsage.introduction"></p>        
+        <div data-concept-proposal-row-field="{{vm.fields.plannedFeatures}}">
+            <div platform-filter="vm.plannedFeatures" platform="vm.platformName">
+                <div data-shared-checkbox="vm.plannedFeatures"></div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,59 @@
+<div class="nav navbar">
+    <div class="container">
+        <h1 class="h2 concept-header">
+            <img src="/sonycp/dist/assets/images/PS-logo-sm.png" class="brand-logo" alt="PlayStation" />
+            <span message-bundle="proposal.form.title"></span>
+             <a data-ui-sref="index.concept.listing">
+                <span class="sr-only">Close</span>
+                 <i class="fa fa-close pull-right close-button" aria-hidden="true"></i>
+             </a>
+         </h1>
+    </div>
+
+</div>
+
+<!--Application Home Page-->
+<div class="nav navbar step-navigation container">
+    <div class="container">
+        <div class="row">
+            <!-- Todo: DRY up. Use ng-repeat on an array of objects. -->
+            <div class="col-xs-3">
+                <div class="step-marker"
+                    data-ng-class="{active: conceptProposalControllerProposal.page() === 0}" >
+                    <span class="badge">1</span>
+                    <span message-bundle="proposal.navigation.stepOne"></span>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="step-marker"
+                    data-ng-class="{active: conceptProposalControllerProposal.page() === 1}" >
+                    <span class="badge">2</span>
+                    <span message-bundle="proposal.navigation.stepTwo"></span>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="step-marker"
+                    data-ng-class="{active: conceptProposalControllerProposal.page() === 2}" >
+                    <span class="badge">3</span>
+                    <span message-bundle="proposal.navigation.stepThree"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form name="conceptInformation" class="form-concept-proposal">
+
+    <div ui-view></div>
+
+    <!--Footer-->
+    <div class="nav-navbar concept-submit-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" ng-include="'app/components/concept-proposal/partial/footer.html'"></div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+</form>

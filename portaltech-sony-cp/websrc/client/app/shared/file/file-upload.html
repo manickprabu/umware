@@ -1,0 +1,38 @@
+<div class="dropzone"
+    data-nv-file-over=""
+    data-nv-file-drop=""
+    data-uploader="uploader" multiple
+    data-over-class="drop"
+    data-ng-class="{'empty':value().length == 0}"
+    filters="queueLimit" >
+
+    <button role="button" class="btn text-danger btn-danger btn-link btn-remove"
+        data-ng-show="uploader.queue"
+        data-ng-click="removeAll(fileItem,$event)"
+        data-ng-hide="!value().length">Remove All</button>
+
+    <span data-ng-hide="value().length">
+        <i class="fa fa-cloud-upload"></i> <i class="fa fa-folder-open-o"></i>
+        <span class="clearfix">Browse or drop a file here</span>
+    </span>
+
+    <input style="visibility: hidden" type="file" class="attachmentsUpload dz-hidden" nv-file-select="" uploader="uploader" multiple="">
+
+    <div class="btn btn-download" role="button" aria-label="File Attachment" data-ng-repeat="fileItem in value()" data-ng-click="stopProp($event)">
+        <span class="fa fa-file-text-o" aria-hidden="true"></span>
+
+        <button type="button" class="fa fa-close btn-close"
+                data-ng-click="removeFile(fileItem,$event)">
+                <span class="sr-only">Remove</span>
+        </button>
+
+        <ul>
+            <li>{{ fileItem.filename() }}</li>
+            <li>{{ fileItem.filesize() }}</li>
+        </ul>
+
+        <!-- TODO: Apply dynamic functionality to show progress icon -->
+        <i class="fa fa-circle-o-notch fa-spin progress-icon"></i>
+    </div>
+
+</div>

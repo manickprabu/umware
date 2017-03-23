@@ -1,0 +1,37 @@
+<!--Partial :: This is footer for buttons:SAVE, CANCEL, PREVIOUS, NEXT. Previous and next are constructed as directive-->
+
+<ul class="nav navbar-nav">
+  <li>
+    <button type="button" class="btn btn-link btn-cancel" 
+             confirm-cancel="conceptProposalControllerProposal.confirmModalOptions" >
+        Cancel
+    </button>
+  </li>
+
+  <li>
+    <button type="button" class="btn btn-link" 
+            ng-click="conceptProposalControllerIndex.save()" 
+            popover-placement="top" 
+            uib-popover={{draft.content}} 
+            popover-is-open={{draft.saved}} 
+            popover-trigger="outsideClick">
+        Save as Draft
+    </button>
+  </li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+  <li data-concept-proposal-prev-next>
+  </li>
+  <li>
+    <button type="button" class="btn btn-primary" 
+            data-ng-if="conceptProposalControllerIndex.showSubmit()"
+            ng-click="conceptProposalControllerIndex.toSubmit()" 
+            popover-placement="top" 
+            uib-popover={{submit.content}} 
+            popover-is-open={{submit.submitted}} 
+            popover-trigger="outsideClick">
+            Submit
+      </button>
+  </li>
+</ul>

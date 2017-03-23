@@ -1,0 +1,7 @@
+<li><a href="" data-toggle="modal"
+       ng-show="overviewOptionController.hasAccountManager()"
+       ng-click="overviewOptionController.accountManagerDetails()" message-bundle="concept.options.accountManagerDetails.name"></a>
+</li>
+<li ng-show="overviewOptionController.validationChecks()">
+    <a href="" data-toggle="modal" ng-click="overviewOptionController.withdraw($event);">{{overviewOptionController.withdrawText}}</a>
+</li>

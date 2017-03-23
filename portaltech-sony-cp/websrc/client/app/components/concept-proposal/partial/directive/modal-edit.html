@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <button type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+        data-confirm-cancel="conceptProposalControllerModalEdit.close">
+        <span class="fa fa-close" aria-hidden="true"></span>
+        <span class="sr-only">{{conceptProposalControllerModalEdit.message('screen-reader.close', 'Close Button')}}</span>
+    </button>
+    <h2 class="modal-title">
+        {{conceptProposalControllerModalEdit.message('title', 'Edit')}}
+    </h2>
+    <p class="modal-intro">
+        {{conceptProposalControllerModalEdit.message('intro', 'Edit concept information.')}}
+    </p>
+    <div class="alert alert-warning" role="alert">
+        {{conceptProposalControllerModalEdit.message('warning', 'Editing core concept information will impact products under this concept.')}}
+    </div>
+</div>
+<form class="form-horizontal form-concept-proposal">
+    <div class="modal-body" data-ng-transclude></div>
+    <div class="modal-footer">
+        <button type="button"
+            class="btn btn-link modal-dismiss"
+            data-dismiss="modal"
+            data-confirm-cancel="conceptProposalControllerModalEdit.close">
+            {{conceptProposalControllerModalEdit.message('button.cancel', 'Cancel')}}
+        </button>
+        <button type="button"
+            class="btn btn-secondary"
+            data-ng-click="conceptProposalControllerModalEdit.confirm()">
+            {{conceptProposalControllerModalEdit.message('button.confirm', 'Confirm')}}
+        </button>
+    </div>
+</form>

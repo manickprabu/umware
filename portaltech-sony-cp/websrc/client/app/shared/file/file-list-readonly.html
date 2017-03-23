@@ -1,0 +1,19 @@
+<div class="dropzone borderless"
+    data-ng-class="{'empty':value().length == 0}">
+
+    <span data-ng-hide="value().length">
+        <i class="fa fa-cloud-upload"></i> <i class="fa fa-folder-open-o"></i>
+        <span class="clearfix">Browse or drop a file here</span>
+    </span>
+
+    <div class="btn btn-download" role="button" aria-label="File Attachment" data-ng-repeat="fileItem in value()" data-ng-click="stopProp($event)">
+        <span class="fa fa-file-text-o" aria-hidden="true"></span>
+
+        <ul>
+            <li>{{ fileItem.filename() }}</li>
+            <li>{{ fileItem.filesize() }}</li>
+        </ul>
+
+    </div>
+
+</div>

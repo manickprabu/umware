@@ -1,0 +1,20 @@
+<ul class="searchable reviewer-dropdown">
+    <li class="button-wrapper">
+    	<button type="button" class="btn btn-primary fill-area btn-assign" ng-click="assignConceptToSelf(item)">
+            <span message-bundle="concept.listing.table.evaluator.label"></span></button>
+    </li>
+    <li role="separator" class="divider"></li>
+    <li class="search-area">
+    	<i class="fa fa-search search-icon"></i>
+    	<label class="sr-only" for="searchListallreviewer1">SearchBox</label>
+    	<input type="text" class="form-control" id="searchListallreviewer1" name="searchList" placeholder="Search" ng-model="search">
+    	<button type="button" class="fa fa-close btn-clear" ng-click="search = ''"><span class="sr-only">Button Closed</span></button>
+    </li>
+    <li class="results">
+        <ul>
+            <li ng-repeat="reviewer in reviewerList | filter:search" ng-click="assignReviewer(reviewer, item)">
+                <a href="" ng-hide="reviewer.self" ng-bind-html="reviewer.name | highlightSearchText: search">{{reviewer.name}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>

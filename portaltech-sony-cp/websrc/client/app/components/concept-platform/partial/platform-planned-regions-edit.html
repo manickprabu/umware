@@ -1,0 +1,49 @@
+
+ <div ng-controller="plannedRegionsController as plannedRegionsController" >
+    <div data-concept-proposal-row-field="{{plannedRegionsController.fields.plannedRegions}}">
+          <table class="table table-striped tbl-timeline clearfix">
+                <thead>
+                    <tr>
+                        <th data-ng-repeat="plannedRegion in plannedRegionsController.plannedRegions">
+                            {{ plannedRegion.name }}
+                        </th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td data-ng-repeat="plannedRegion in plannedRegionsController.plannedRegions">
+                        <div class="form-group">
+                            <div ng-class="{focus : focus == true}"
+                                class="quarter-picker"
+                                uib-popover-template="'app/components/concept-proposal/partial/popover/platform-timeline-quarter.html'"
+                                popover-is-open="plannedRegion.isPopupOpen"
+                                popover-trigger="outsideClick"
+                                data-ng-click="plannedRegionsController.onRegionFocus(plannedRegion)">
+
+                                <input ng-focus="focus = true"
+                                        ng-blur="focus = false"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="QX-YYYY"
+                                    data-ng-model="plannedRegion.value"
+                                    data-ng-change="plannedRegionsController.releaseDateChanged(plannedRegion)" />
+                                    <i class="fa fa-calendar icon-calendar" aria-hidden="true"></i>
+                                    <i class="fa fa-angle-down icon-arrow" aria-hidden="true"></i>
+                            </div>
+
+                            <label data-ng-if="$index > 0" for="ps4sameDate{{plannedRegion.code}}" class="checkbox-inline">
+                                <input
+                                    id="ps4sameDate{{plannedRegion.code}}"
+                                    type="checkbox"
+                                    ng-model="plannedRegions[$index].selected"
+                                    name="ps4sameDate{{plannedRegion.code}}"
+                                    data-ng-click="plannedRegion.value = plannedRegionsController.plannedRegions[$index-1].value; plannedRegionsController.updateField()">
+                                <span>Same date</span>
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+          </table>
+    </div>
+</div>
+
+

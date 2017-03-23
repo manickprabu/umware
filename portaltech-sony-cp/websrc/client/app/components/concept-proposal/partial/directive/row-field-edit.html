@@ -1,0 +1,12 @@
+<div class="form-group">
+    <label
+        for="conceptProposalControllerRowFieldEdit.field.name()"
+        class="col-xs-3 control-label">
+        <span class="required" data-ng-if="conceptProposalControllerRowFieldEdit.field.required()">
+            *
+        </span>
+        {{conceptProposalControllerRowFieldEdit.field.label()}}
+        <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="{{conceptProposalControllerRowFieldEdit.field.information()}}"></i>
+    </label>
+    <div class="col-xs-9" data-ng-transclude></div>
+</div>

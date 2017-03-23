@@ -1,0 +1,26 @@
+
+<span data-concept-proposal-modal-edit="overview.platform-information.non-ps-availability.edit"
+     data-instance="conceptProposalControllerReviewEdit.instance">
+
+    <div ng-controller="platformLanguageDistributionController as platformLanguageDistributionController">
+        <div concept-proposal-row-field-edit="{{platformLanguageDistributionController.fields.plannedLanguages}}">
+            <div shared-dropdown="platformLanguageDistributionController.plannedLanguages" multi-select="true"></div>
+        </div>
+        <div concept-proposal-row-field-edit="{{platformLanguageDistributionController.fields.businessModel}}">
+            <div shared-dropdown="platformLanguageDistributionController.businessModel"></div>
+        </div>
+
+        <div concept-proposal-row-field-edit="{{platformLanguageDistributionController.fields.plannedDistributionMedia}}">
+            <div data-shared-checkbox="platformLanguageDistributionController.plannedDistributionMedia"></div>
+        </div>
+        <div concept-proposal-row-field-edit="{{platformLanguageDistributionController.fields.offlineMultiplayer}}">
+            <div shared-radio="platformLanguageDistributionController.config[platformLanguageDistributionController.fields.offlineMultiplayer]"></div>
+        </div>
+         <div concept-proposal-row-field-edit="{{platformLanguageDistributionController.fields.onlineMultiplayer}}">
+            <div shared-radio="platformLanguageDistributionController.config[platformLanguageDistributionController.fields.onlineMultiplayer]"></div>
+        </div>
+        <div concept-proposal-row-field-edit="{{platformLanguageDistributionController.fields.dlcIntension}}" >
+            <div data-concept-proposal-text-field="{{platformLanguageDistributionController.fields.dlcIntension}}"></div>
+        </div>
+    </div>
+</span>

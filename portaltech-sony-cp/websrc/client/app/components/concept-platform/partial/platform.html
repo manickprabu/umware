@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="section-header" message-bundle="proposal.plannedPlatforms.title"></h2>
+            <p class="section-intro" message-bundle="proposal.plannedPlatforms.introduction"></p>
+
+            <!-- Platforms -->
+            <div class="accordion-selection" data-concept-proposal-row-field="proposal.plannedPlatforms">
+                <div role="tablist" aria-multiselectable="true">
+                    <div role="tab" id="accordion">
+                        <div class="platform-collapse-selection"
+                            data-ng-class="{'error':!platform.open, 'valid':platform.open}">
+                            <div class="platform-header collapsed"
+                                data-parent="#accordion"
+                                data-target="#platformPSName"
+                                aria-expanded="true" aria-controls="platformPSName">
+                                    <shared-accordion> </shared-accordion>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Non-PlayStation platforms  -->
+            <div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="section-header" message-bundle="proposal.plannedPlatforms.availability.title"></h2>
+                        <p class="section-intro" message-bundle="proposal.plannedPlatforms.availability.introduction"></p>
+                    </div>
+                </div>
+                <div platform-playstation-edit></div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

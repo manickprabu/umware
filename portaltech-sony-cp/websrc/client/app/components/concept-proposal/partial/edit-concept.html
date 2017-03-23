@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-ng-click="editConceptController.close()"><span class="fa fa-close" aria-hidden="true"></span><span class="sr-only">Close Button</span></button>
+    <h2 class="modal-title">Edit core concept information 2</h2>
+    <p class="modal-intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo rerum, explicabo officiis eius aliquam, dicta blanditiis facilis assumenda nisi aspernatur optio corporis earum sint quaerat tempora soluta praesentium quae rem.</p>
+    <div class="alert alert-warning" role="alert">Editing core concept information will impact products under this concept</div>
+</div>
+<form id="editCoreConcept" class="form-horizontal form-concept-proposal" action="#">
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="conceptType" class="col-xs-3 control-label">
+                {{editConceptController.concept.field('conceptType').label()}}
+                <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+            </label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" id="conceptType" value="{{editConceptController.concept.field('conceptType').value()}}" placeholder="" disabled>
+            </div>
+        </div>
+
+        <div concept-proposal-row-field-edit="leadRoles">
+            <div shared-radio="editConceptController.config.leadRoles2"></div>
+        </div>
+
+        <div data-ng-repeat="name in editConceptController.fields.names"
+            concept-proposal-row-field-edit="{{name}}">
+            <div data-concept-proposal-text-field="{{name}}"></div>
+        </div>
+
+        <div data-ng-repeat="dropdown in editConceptController.fields.dropdowns"
+            concept-proposal-row-field-edit="{{dropdown.name}}">
+            <div data-shared-dropdown="dropdown.instance"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-link modal-dismiss" data-dismiss="modal"  confirm-cancel="editConceptController.confirmModalOption">Cancel</button>
+        <button type="button" class="btn btn-secondary" data-ng-click="editConceptController.clickConfirm()">Confirm</button>
+    </div>
+</form>

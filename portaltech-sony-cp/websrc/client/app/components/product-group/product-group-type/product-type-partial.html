@@ -1,0 +1,25 @@
+<div>
+
+  <div class="secondary-nav">
+  	<div class="container">
+  		<ul class="nav nav-tabs" role="tablist">
+  			<li role="presentation" class="active">
+          <a href="#singleRegistration" aria-controls="singleRegistration" role="tab" data-toggle="tab" aria-expanded="true">Single Registration</a>
+        </li>
+  			<li role="presentation" class="">
+          <a href="#bulkRegistration" aria-controls="bulkRegistration" role="tab" data-toggle="tab" aria-expanded="false">Bulk Registration</a>
+        </li>
+  		</ul>
+  	</div>
+  </div>
+
+  <div class="tab-content content-area">
+      <div role="tabpanel" class="tab-pane active" id="singleRegistration">
+        <div data-ui-view="single-registration"></div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="bulkRegistration">
+          <div data-ui-view="bulk-registration"></div>
+      </div>
+  </div>
+
+</div>

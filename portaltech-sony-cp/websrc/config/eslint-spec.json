@@ -1,0 +1,12 @@
+{
+    "extends": "./eslint.json",
+    "env": {
+        "jasmine": 1
+    },
+    "globals": {
+        "inject": 1
+    },
+    "rules": {
+        "func-names": 0
+    }
+}

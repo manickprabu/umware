@@ -1,0 +1,41 @@
+<div
+    data-concept-proposal-modal-edit="proposed-platforms"
+    data-instance="conceptProposalControllerReviewEdit.instance"
+    >
+    <!-- <div data-ng-controller="editConceptController"> -->
+    <div data-ng-controller="conceptOverviewEditControllerCore as conceptOverviewEditControllerCore">
+        <div class="form-group">
+            <label for="conceptType" class="col-xs-3 control-label">
+                {{conceptOverviewEditControllerCore.field('conceptType').label()}}
+                <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+            </label>
+            <div class="col-xs-9">
+                <input type="text" class="form-control" id="conceptType" value="{{conceptOverviewEditControllerCore.field('conceptType').value()}}" placeholder="" disabled>
+            </div>
+        </div>
+
+        <div concept-proposal-row-field-edit="leadRoles">
+            <div shared-radio="conceptOverviewEditControllerCore.config.leadRoles2"></div>
+        </div>
+
+        <div data-ng-repeat="name in conceptOverviewEditControllerCore.fields.names"
+            concept-proposal-row-field-edit="{{name}}">
+            <div data-concept-proposal-text-field="{{name}}"></div>
+        </div>       
+
+        <div concept-proposal-row-field-edit="superGenre">
+            <div data-shared-dropdown="conceptOverviewEditControllerCore.config.superGenre"></div>
+        </div>
+
+        <div concept-proposal-row-field-edit="categoryGenre">
+            <div data-shared-dropdown="conceptOverviewEditControllerCore.config.categoryGenre"></div>
+        </div>
+               
+        <div concept-proposal-row-field-edit="franchise">
+            <div id="franchiseDropDown"
+                 shared-dropdown="conceptOverviewEditControllerCore.config.franchise.core"
+                 first-item="conceptOverviewEditControllerCore.config.franchise.first">
+            </div>
+        </div>       
+    </div>
+</div>

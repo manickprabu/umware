@@ -1,0 +1,32 @@
+
+<div data-ng-repeat="platform in sharedAccordionController.checkboxes.list()">
+    <div data-ng-click="sharedAccordionController.toggleView(platform)" class="platform-collapse-selection">
+        <div class="accordion-header" role="button">
+            <label for="platformPSName-{{$index}}" class="checkbox-inline">
+                
+                <!-- checkbox -->
+                <input  id="platformPSName-{{$index}}" 
+                        type="checkbox" 
+                        value="platformPSName-{{$index}}"
+                        data-ng-model="sharedAccordionController.checkboxes.model(platform.value)"
+                        data-ng-model-options="{getterSetter: true, debounce: 50}"
+                        data-ng-change="sharedAccordionController.checkboxes.change(); sharedAccordionController.changeView(platform)"/>
+                <span>{{platform.label}}</span>
+
+            </label>
+            <!-- <i class="fa pull-right accordion-marker"
+               data-ng-class="{'fa-chevron-up':!platform.open, 'fa-chevron-down':platform.open}" > </i>
+            <i class="fa-exclamation fa error validation-icon pull-right"></i> -->
+        </div>
+    </div>
+   
+    <div id="platformPSName-{{$index}}" class="panel-collapse collapse "
+        role="tabpanel"
+        aria-labelledby="platformPSName-{{$index}}"
+        aria-expanded="false"
+        data-ng-class="{'in':(platform.open && platform.selected)}">
+
+        <!-- accordion view -->
+        <concept-proposal-platform platform-name="platform.label"></concept-proposal-platform>
+    </div>
+</div>

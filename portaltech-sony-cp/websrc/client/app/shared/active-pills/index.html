@@ -1,0 +1,5 @@
+<span class="label"
+      data-ng-repeat="item in conceptProposalControllerActivePills.pills track by $index"
+      ng-class="{'label-active' : item.active,
+                  'label-disabled' : !item.active }">{{item.name}}
+</span>

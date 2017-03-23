@@ -1,0 +1,19 @@
+<span>
+    <div type="button" ng-show="item.proposal.reviewer" class="dropdown reviewer-toggle">
+        <button uib-popover-template="templates.assignReview" popover-trigger="outsideClick"
+        popover-placement="bottom"
+         class="btn btn-link dropdown-toggle btn-assign-dropdown">
+            {{item.proposal.reviewer.name}}
+            <span class="fa fa-pencil"></span>
+        </button>
+
+    </div>
+    <div ng-hide="item.proposal.reviewer " class="dropdown reviewer-toggle">
+        <button uib-popover-template="templates.assignReview" popover-trigger="outsideClick"
+        popover-placement="bottom"
+         class="btn btn-link dropdown-toggle btn-assign-dropdown">
+            Assign
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+</span>

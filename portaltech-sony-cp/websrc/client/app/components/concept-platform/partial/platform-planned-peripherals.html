@@ -1,0 +1,39 @@
+
+<div ng-controller="plannedPeripheralsController as plannedPeripheralsController">
+    <div data-concept-proposal-row-field="{{plannedPeripheralsController.fields.plannedPeripherals}}">
+
+        <div class="table-masthead">
+            <a data-ng-click="plannedPeripheralsController.toggleSelectAll()">
+                <span data-ng-show="plannedPeripheralsController.selectAll">Deselect All</span>
+                <span data-ng-show="!plannedPeripheralsController.selectAll">Select All</span>
+            </a>
+        </div>
+
+        <table class="table table-striped tbl-peripheral-options clearfix">
+            <thead>
+                <tr>
+                    <th>Peripheral</th>
+                    <th>Required or Optional</th> 
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="valid" data-ng-repeat="peripheral in plannedPeripheralsController.selectedPeripherals">
+                    <td headers="ps3PeripheralEOT ps3Platform">
+                        <label for="{{plannedPeripheralsController.fields.plannedPeripherals + $index}}" class="checkbox-inline">
+                            <input id="{{plannedPeripheralsController.fields.plannedPeripherals + $index}}" type="checkbox" 
+                                   ng-model="peripheral.selected" ng-change="plannedPeripheralsController.updateFieldValue()" />
+                            <span>{{peripheral.label}}</span>
+                        </label>
+                    </td>
+                    <td headers="ps3PeripheralEOT ps3RequiredOptional">
+                        <fieldset ng-disabled="!peripheral.selected"> 
+                            <div shared-radio="peripheral.field"></div>
+                        </fieldset>
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+</div>

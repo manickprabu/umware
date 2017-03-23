@@ -1,0 +1,57 @@
+<div class="content-area concept-overview-content" >
+    <h2 message-bundle="concept.overview.internalReview.name"></h2>
+    <hr>
+    <p message-bundle="concept.overview.internalReview.content"></p>
+    <form name="InternalReviewForm" novalidate>
+        <div data-ng-repeat="field in internalReviewConceptController.fields">
+           
+            <div class="form-group">
+                <fieldset>
+                        <div data-concept-proposal-row-field="{{field.radio.name}}">
+                            <span ng-repeat="option in field.radio.ratings">
+                                <input id="{{option.value}}" class="selectable-radio" type="radio" name="conceptRating" required value="{{option.value}}" 
+                                    data-ng-model="field.radio.config.model"
+                                    data-ng-model-options="{getterSetter: true}">
+                                <label for="{{option.value}}"><span class="{{option.cssClass}}" aria-hidden="true"></span>{{option.label}}</label>
+                            </span> 
+                        </div>
+                </fieldset>
+            </div>        
+
+            <div class="form-group">                
+                <div data-concept-proposal-row-field="{{field.comment.name}}">
+                    <textarea 
+                        data-ng-model="field.comment.model.value" 
+                        class="form-control alt-text-area" 
+                        id="conceptComments" name="conceptComments" 
+                        data-ng-model-options="{getterSetter: true}"
+                        rows="11" placeholder="Concept comments" ng-minlength="1" ng-maxlength="500" required>
+                    </textarea>
+                </div>
+                <!-- show an error if username is too short -->
+                <p ng-show="InternalReviewForm.conceptComments.$error.minlength">comments are too short.</p>
+                <!-- show an error if username is too long -->
+                <p ng-show="InternalReviewForm.conceptComments.$error.maxlength">Comments are too long.</p>                
+            </div>
+        </div>
+
+        <h2 message-bundle="concept.overview.internalReview.externalFeedback.name"></h2>
+        <hr>
+        <p message-bundle="concept.overview.internalReview.externalFeedback.content"></p>
+        <div class="form-group ">
+            <div concept-proposal-row-field="concept.overview.attachments">
+                <div shared-file="internalReviewConceptController.config.reviewAttachments" field-language="en" total-files-allowed="1"> </div>
+            </div>
+        </div>
+        <hr>
+        <div>       
+            <button type="button" class="pull-left btn btn-primary" ng-click="internalReviewConceptController.suspend(concept)" popover-placement="top"
+                uib-popover={{internalReviewConceptController.suspendedmessage}} popover-is-open={{internalReviewConceptController.suspended()}} ng-disabled="{{internalReviewConceptController.suspended()}}" popover-trigger="outsideClick">
+                <span message-bundle="concept.overview.internalReview.suspendConcept.name"></span></button>
+
+            <button type="button" class="pull-right btn btn-primary" ng-click="internalReviewConceptController.save(concept)" ng-disabled="InternalReviewForm.$invalid"
+                popover-placement="top" uib-popover="{{internalReviewConceptController.savedMessage}}" popover-is-open="{{internalReviewConceptController.saved}}" popover-trigger="outsideClick">
+                    <span message-bundle="concept.overview.internalReview.saveConcept.name"></span></button>
+        </div>
+    </form>
+</div>

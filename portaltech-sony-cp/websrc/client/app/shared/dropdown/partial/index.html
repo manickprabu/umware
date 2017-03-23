@@ -1,0 +1,61 @@
+<!--Dropdown shared partial-->
+
+<div class="dropdown" data-ng-class="{open: sharedDropdownController.open()}" click-outside="sharedDropdownController.outsideClick(false)">
+    <button type="button" id="dropdownFranchise"
+        class="btn btn-default dropdown-toggle"
+        aria-haspopup="false"
+        aria-expanded="false"
+        data-max-select="5"
+        data-ng-click="sharedDropdownController.open(!sharedDropdownController.open())"
+        data-ng-class="{disabled: sharedDropdownController.dropdown.disable()}">
+        <span class="txt-btn pull-left">{{sharedDropdownController.dropdown.select().label || sharedDropdownController.dropdown.placeholder()}}</span>
+        <i class="fa fa-angle-down pull-right"></i>
+    </button>
+
+    <ul class="dropdown-menu searchable offset" aria-labelledby="dropdownFranchise">
+        
+        <li class="search-area" data-ng-if="sharedDropdownController.dropdown.search()">
+            <i class="fa fa-search search-icon"></i>
+            <input type="text" class="form-control" name="searchList" placeholder="Search" data-ng-model="sharedDropdownController.search" />
+            
+            <button type="button" class="fa fa-close btn-clear" 
+                data-ng-click="sharedDropdownController.reset()"><span class="sr-only">Clear</span>
+            </button>
+        </li>
+
+
+        <li class="button-wrapper" data-ng-if="sharedDropdownController.firstItem">
+            <button type="button" class="btn btn-tertiary" data-ng-click="sharedDropdownController.firstItem.click()()">{{sharedDropdownController.firstItem.label()}}
+            </button>
+        </li>
+
+		        
+        <li class="results" 
+            data-ng-repeat="item in sharedDropdownController.dropdown.list() | filter: sharedDropdownController.search">
+            <a
+                data-ng-if="!sharedDropdownController.multiSelect"
+                data-ng-click="sharedDropdownController.select(item.value)">
+                {{item.label}}
+            </a>
+            <label class="checkbox-inline" data-ng-if="sharedDropdownController.multiSelect">
+                <input type="checkbox"
+                    data-ng-model="sharedDropdownController.dropdown.model(item.value)"
+                    data-ng-change="sharedDropdownController.dropdown.change()"
+                    data-ng-model-options="{getterSetter: true, debounce: 50}" />
+                    <span>{{item.label}}</span>
+            </label>
+        </li>
+    </ul>
+
+<!-- 
+    Reference: http://dotansimha.github.io/angularjs-dropdown-multiselect/#/ 
+    checkboxes="true" 
+-->
+    <!-- <div data-ng-dropdown-multiselect=""
+         data-options="sharedDropdownController.dropdown.list()" 
+         data-selected-model="sharedDropdownController.model" 
+         data-events="sharedDropdownController.events"
+         data-extra-settings="sharedDropdownController.settings"
+         data-translation-texts="sharedDropdownController.placeholder()"></div>
+    </div> -->
+

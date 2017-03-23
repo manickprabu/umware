@@ -1,0 +1,25 @@
+<ul ng-controller="conceptFilterPopupController as conceptFilterPopupController" class="dropdown-filters">
+
+        <li class="list-group-item" 
+            ng-repeat="filterField in conceptFilterPopupController.entity.filterFields | filter:search" >
+            <strong class="">{{conceptFilterPopupController.filterLabel(filterField.field)}}</strong>
+            <div class="available-filters pull-left">
+                <span data-toggle="button" type="button" class="label"
+                        ng-repeat="item in filterField.values"
+                        ng-class="{'label-active':item.selected}"
+                        ng-click="conceptFilterPopupController.selectFilter(item);">
+                        {{item.value}}</span>
+            </div>
+        </li>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <button class="btn btn-link" ng-click="conceptFilterPopupController.clearFilterPopover()" message-bundle="concept.listing.table.filter.close.button"></button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link btn-cancel" ng-click="conceptFilterPopupController.removeFilters()" message-bundle="concept.listing.table.filter.remove.button"></button>
+        </li>
+        <li class="nav-item pull-right">
+            <button type="button" class="btn btn-secondary btn-xs filter-btn" ng-click="conceptFilterPopupController.applyFilter()" message-bundle="concept.listing.table.filter.apply.button"></button>
+        </li>
+    </ul>
+</ul>

@@ -1,0 +1,30 @@
+<div class="dropdown notification-menu">
+    <a aria-label="Notifications" class="notification"
+        class="btn btn-default dropdown-toggle"        
+        data-toggle="dropdown"
+        aria-haspopup="false"
+        aria-expanded="false"
+        data-max-select="5">
+        <div>
+            <span aria-hidden="true" class="fa fa-bell icon"></span>
+            <span>Notifications</span>
+            <span class="badge" data-ng-if="vm.notifyLength">
+                {{::vm.notifyLength}}
+            </span>           
+
+        </div>
+    </a>  
+    <ul class="dropdown-menu" data-ng-if="vm.notifyLength">            
+        <li class="results">
+            <ul class="notification-menu-inner">
+               <li data-ng-repeat="item in vm.dropdown.list()">
+                    <a>{{::item.label}}</a>
+                </li>
+            </ul>  
+        </li>            
+        <li class="divider" data-ng-if="vm.notifyLength"></li>
+        <li data-ng-if="vm.notifyLength" class="dropdown-menu-clear">
+            <a ng-click="removeAll()">{{::vm.alertMessage}}</a>
+        </li>           
+    </ul>  
+</div>

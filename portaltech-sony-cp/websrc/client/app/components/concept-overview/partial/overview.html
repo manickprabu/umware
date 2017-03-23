@@ -1,0 +1,266 @@
+<!-- Alert Notifications -->
+<div alert-notification class="alertNotifications"></div>
+<body class="ps-grid">
+	<div class="breadcrumb-nav">
+		<ul class="container list-inline">
+			<li><span class="fa fa-chevron-left" aria-hidden="true"></span></li>
+			<li><a ui-sref="index.concept.listing">Concepts</a></li>
+		</ul>
+	</div>
+
+		<div class="page-jumbotron clearfix">
+			<div class="container">
+                <div class="jumbotron-content">
+				<h1>{{conceptProposalControllerReview.concept.nameEN}}</h1>
+				<div class="concept-status pull-left">
+
+					<p><span message-bundle="concept.friendlyId.name"></span><span>{{conceptProposalControllerReview.concept.id}}</span><span class="divider">|</span>
+						<span message-bundle="concept.status.name"></span> {{conceptProposalControllerReview.concept.status}}<span></span><span class="badge active"
+						ng-class="{	'active' : conceptProposalControllerReview.concept.status == 'ACTIVE',
+									'badge-suspended' : conceptProposalControllerReview.concept.status == 'SUSPENDED',
+									'badge-withdrawn' : conceptProposalControllerReview.concept.status == 'WITHDRAWN',
+									'badge-on-hold' : conceptProposalControllerReview.concept.status == 'ON_HOLD',
+									'badge-withdrawn' : conceptProposalControllerReview.concept.status == 'WITHDRAWN'}">
+					</span></p>
+				</div>
+				<div class="overview-details">
+					<dl class="dl-horizontal pull-left">
+						<dt message-bundle="concept.overview.nameEN.name"></dt>
+						<dd>{{conceptProposalControllerReview.concept.nameEN}}</dd>
+						<dt message-bundle="concept.overview.nameJP.name"></dt>
+						<dd>{{conceptProposalControllerReview.concept.nameJA}}</dd>
+						<dt message-bundle="concept.overview.codeNameEN.name"> </dt>
+						<dd>{{conceptProposalControllerReview.concept.codeNameEn}}</dd>
+						<dt message-bundle="concept.overview.codeNameJP.name"></dt>
+						<dd>{{conceptProposalControllerReview.concept.codeNameJA}}</dd>
+					</dl>
+					<dl class="dl-horizontal pull-left">
+						<dt message-bundle="concept.overview.type.name"></dt>
+						<dd>{{conceptProposalControllerReview.concept.conceptType}}</dd>
+						<dt message-bundle="concept.overview.franchise.name"></dt>
+						<dd>{{conceptProposalControllerReview.concept.franchise.name}}</dd>
+						<dt message-bundle="concept.overview.genreSub.name"></dt>
+						<dd>{{conceptProposalControllerReview.concept.categoryGenre.name}}</dd>
+						<dt message-bundle="concept.overview.role.name"></dt>
+						<dd>{{conceptProposalControllerReview.concept.partnerRoles[0].roles.toString()}}</dd>
+					</dl>
+
+				</div>
+
+		</div>
+		<div class="register-product-group">
+
+				<p class="pull-left button-container">
+                    <button class="btn btn-primary"
+                            message-bundle="concept.overview.createProductGroup.button.name"
+                            ng-class="{ 'btn-disabled' : !conceptProposalControllerReview.conceptIsActive() }"
+                            ng-click='!conceptProposalControllerReview.conceptActive || conceptProposalControllerReview.createProductGroup($event)'
+                            ></button>
+                    <button type="button" class="btn btn-primary" ng-show="conceptProposalControllerReview.isAccountManager() || conceptProposalControllerReview.isReviewer()" ng-click="conceptProposalControllerReview.suspend()">{{conceptProposalControllerReview.suspendText()}}</button>
+                </p>
+				<div class="dropdown options pull-right">
+					<button type="button" class="dropdown-toggle option" data-toggle="dropdown" id="options"
+							aria-haspopup="true" aria-expanded="false"
+							data-max-select="0">
+							<span class="fa fa-gear" aria-hidden="true"></span>
+							<span message-bundle="concept.options.name"></span>
+						<span class="fa fa-chevron-down" aria-hidden="true"></span>
+					</button>
+
+					<ul class="dropdown-menu searchable dropdown-menu-options" aria-labelledby="options">
+						<li class="results">
+							<ul class="results-last-child" data-ui-view="overviewOptionView"> </ul>
+						</li>
+					</ul>
+                </div>
+
+				</div>
+			 </div>
+		</div>
+
+
+
+		<div class="primary-nav">
+			<div class="container">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation"><a href="#/productGroups" aria-controls="productGroups" role="tab" data-toggle="tab">Product Groups</a></li>
+					<li role="presentation" class="active"><a href="#conceptOverview" aria-controls="conceptOverview" role="tab" data-toggle="tab">Concept Overview</a></li>
+					<li role="presentation"><a href="#/merchandising" aria-controls="merchandising" role="tab" data-toggle="tab">Merchandising</a></li>
+					<li role="presentation"><a href="#/userAccessManagement" aria-controls="userAccessManagement" role="tab" data-toggle="tab">User Access Management</a></li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane" id="productGroups">
+				<div class="container">
+					product-groups
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane active" id="conceptOverview">
+				<div class="primary-nav-details">
+					<div class="container"><p class="contextual-copy" message-bundle="concept.overview.conceptOverview.content"></p></div>
+				</div>
+
+				<div class="secondary-nav">
+					<div class="container">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="" data-target="#coreInformation" aria-controls="coreInformation" role="tab"
+									data-toggle="tab" message-bundle="concept.overview.tab.one.name"></a></li>
+							<li role="presentation">
+								<a href="" data-target="#indicativeInformation" aria-controls="indicativeInformation" role="tab"
+									data-toggle="tab" message-bundle="concept.overview.tab.two.name"></a></li>
+							<li role="presentation">
+								<a href="" data-target="#platformInformation" aria-controls="platformInformation" role="tab"
+									data-toggle="tab" message-bundle="concept.overview.tab.three.name"></a></li>
+							<li role="presentation">
+								<a href=""  data-target="#organisationInvolved" aria-controls="organisationInvolved" role="tab"
+									data-toggle="tab" message-bundle="concept.overview.tab.four.name"></a></li>
+							<li role="presentation" ng-show="conceptProposalControllerReview.user.isReviewer()">
+								<a href="" data-target="#internalReview" aria-controls="internalReview" role="tab"
+									data-toggle="tab" message-bundle="concept.overview.internalReview.name"></a></li>
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="container concept-overview-content">
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="coreInformation">
+							<div class="content-area concept-overview-content">
+								<!-- content area for Core Information Tab-->
+								<div ng-include="'app/components/concept-proposal/partial/core-information.html'"></div>
+						</div>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="indicativeInformation">
+							<div class="content-area concept-overview-content">
+								<!-- content area for Indicative Information Tab -->
+								<div data-ui-view="overviewIndicativeInformation" ></div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="platformInformation">
+							<!-- content area for Platform Information Tab -->
+							<div data-ui-view="overviewPlatformInformation" ></div>
+
+						</div>
+						<div role="tabpanel" class="tab-pane" id="organisationInvolved">
+							<!-- content area for Developers and publishers involved Tab -->
+							<div ng-include="'app/components/concept-proposal/partial/organisation-involved/organisation-involved.html'"></div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="internalReview">
+							<div data-ui-view="coreInternalReview" ></div>
+						</div>
+					</div>
+				</div>
+				<div id="addNewPartner" class="modal fade" tabindex="-1" role="dialog">
+					<div class="modal-dialog modal-dialog-vertical form-concept-proposal">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close" aria-hidden="true"></span><span class="sr-only">Close Button</span></button>
+								<h2 class="modal-title">Add New Partner</h2>
+								<p class="modal-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit ar adipiscing elit. Cras sed sapien quam. met dui dui.</p>
+							</div>
+							<form class="form-horizontal" action="#">
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="partner" class="control-label"><span class="required">*</span>
+											Partner
+										</label>
+										<input type="text" class="form-control" id="partner" value="" placeholder="i.e. Business Name Ltd" required="required" >
+									</div>
+
+									<fieldset class="form-group">
+										<legend class="control-label"><span class="required">*</span>
+											Role<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+										</legend>
+
+										<label for="addNewPartnerroleDeveloper" class="radio-inline">
+											<input id="addNewPartnerroleDeveloper" type="radio" name="conceptRole" value="" />
+											<span>Developer</span>
+										</label>
+
+										<label for="addNewPartnerrolePublisher" class="radio-inline">
+											<input id="addNewPartnerrolePublisher" type="radio" name="conceptRole" value="" />
+											<span>Publisher</span>
+										</label>
+
+										<label for="addNewPartnerroleBoth" class="radio-inline">
+											<input id="addNewPartnerroleBoth" type="radio" name="conceptRole" value="" />
+											<span>Both</span>
+										</label>
+									</fieldset>
+
+
+
+
+									<fieldset class="form-group">
+										<legend class="control-label"><span class="required">*</span>
+											Distribution Channel
+										</legend>
+
+										<label for="distributionChannelDigital" class="checkbox-inline">
+											<input id="distributionChannelDigital" type="checkbox" name="distributionChannel[Digital]" value="" />
+											<span>Digital</span>
+										</label>
+
+										<label for="distributionChannelPhysical" class="checkbox-inline">
+											<input id="distributionChannelPhysical" type="checkbox" name="distributionChannel[Physical]" value="" />
+											<span>Physical</span>
+										</label>
+
+										<label for="distributionChannelStreaming" class="checkbox-inline">
+											<input id="distributionChannelStreaming" type="checkbox" name="distributionChannel[Streaming]" value="" />
+											<span>Streaming</span>
+										</label>
+									</fieldset>
+
+
+
+
+									<fieldset class="form-group">
+										<legend class="control-label"><span class="required">*</span>
+											Platforms<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+										</legend>
+
+										<label for="platformPS4" class="checkbox-inline">
+											<input id="platformPS4" type="checkbox" name="platform[PS4]" value="" />
+											<span>PS4</span>
+										</label>
+
+										<label for="platformPS3" class="checkbox-inline">
+											<input id="platformPS3" type="checkbox" name="platform[PS3]" value="" />
+											<span>PS3</span>
+										</label>
+
+										<label for="platformVITA" class="checkbox-inline">
+											<input id="platformVITA" type="checkbox" name="platform[VITA]" value="" />
+											<span>VITA</span>
+										</label>
+									</fieldset>
+
+
+
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-link modal-dismiss" data-dismiss="modal">Cancel</button>
+									<button type="submit" class="btn btn-secondary"
+                                        data-ng-click="conceptProposalControllerReview.saveFields()">Confirm</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div role="tabpanel" class="tab-pane" id="merchandising">
+				<div class="container">
+					merchandising
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="userAccessManagement">
+				<div class="container">
+					user-access-management
+				</div>
+			</div>
+		</div>

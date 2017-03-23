@@ -1,0 +1,80 @@
+<!-- Centered Tabs -->
+<div class="popup-calendar" style="display: block;">
+        <!-- Nav tabs -->
+    <ul class="nav nav-tabs nav-justified popover-tabs" role="tablist">
+        <li role="presentation">
+            <a data-toggle="tab" data-target="#exactdate">
+                {{ conceptProposalSelectQuarter.exactDateTabTitle }}
+            </a>
+        </li>
+        <li role="presentation" class="active">
+            <a data-toggle="tab" data-target="#quarter">
+                {{ conceptProposalSelectQuarter.quarterTabTitle }}
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!-- Calander Control Tab -->
+        <div id="exactdate" role="tabpanel" class="tab-pane exact-date" data-tab="exact-date">
+            <!---->
+            <nav class="date-options" ng-cloak>
+                <div class="dropdown pull-left">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="exactMonthDropdownxboxReleaseEurope" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{ conceptProposalSelectQuarter.defaultMonth }}
+                        <i class="fa fa-angle-down dropdown-handle"></i>
+                    </button>
+                    <ul class="dropdown-menu arrow-up dropdown-menu-right" aria-labelledby="exactMonthDropdownxboxReleaseEurope">
+                        <li><a ng-repeat="month in conceptProposalSelectQuarter.months" ng-click="conceptProposalSelectQuarter.setDateByMonth($index)">{{ ::month }}</a></li>                       
+                    </ul>
+                </div>
+                <div class="dropdown pull-left">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="exactYearDropdownxboxReleaseEurope" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{ conceptProposalSelectQuarter.defaultYear }}
+                        <i class="fa fa-angle-down dropdown-handle"></i>
+                    </button>
+                    <ul class="dropdown-menu arrow-up dropdown-menu-right" aria-labelledby="exactYearDropdownxboxReleaseEurope">
+                        <li ng-repeat="year in conceptProposalSelectQuarter.years"><a ng-click="conceptProposalSelectQuarter.setDateByYear(year)">{{ ::year}}</a></li>                       
+                    </ul>
+                </div>                
+                <ul class="pager pull-right">
+                    <li><button class="btn btn-secondary" type="button" ng-click="conceptProposalSelectQuarter.prev()" ng-disabled="conceptProposalSelectQuarter.PreviousDisable"><i class="fa fa-chevron-left"></i><span class="sr-only" >Previous</span></button></li>
+                    <li><button class="btn btn-secondary" type="button" ng-click="conceptProposalSelectQuarter.next()" ng-disabled="conceptProposalSelectQuarter.NextDisable"><i class="fa fa-chevron-right"></i><span class="sr-only" >Next</span></button></li>
+                </ul> 
+
+                <div uib-datepicker="" class="uib-datepicker calander" 
+                ng-model="conceptProposalSelectQuarter.dt" data-ng-change="conceptProposalSelectQuarter.setDate()"             
+                is-open="conceptProposalSelectQuarter.datePopup.opened" 
+                datepicker-options="conceptProposalSelectQuarter.dateOptions" min-mode="month" datepicker-mode="'month'" >
+               
+            </nav>                
+        </div>
+        <!-- QUARTER TAB-->
+        <div id="quarter" role="tabpanel" class="tab-pane quarter active" data-tab="quarter">
+            <nav class="date-options">
+                <div class="dropdown pull-left">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{ conceptProposalSelectQuarter.DefaultQuarter}} <i class="fa fa-angle-down dropdown-handle"></i>
+                        </button>
+                        <ul class="dropdown-menu arrow-up dropdown-menu-right" aria-labelledby="quarterDropdownxboxReleaseEurope">
+                            <li data-ng-repeat="quarter in conceptProposalSelectQuarter.quarters">
+                                <a ng-click="conceptProposalSelectQuarter.setSingleQuarter(quarter.value)">{{ ::quarter.name }}</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="dropdown pull-left">
+                      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        {{ conceptProposalSelectQuarter.defaultYear }}
+                        <i class="fa fa-angle-down dropdown-handle"></i>
+                      </button>
+                      <ul class="dropdown-menu arrow-up dropdown-menu-right" aria-labelledby="quarterYearDropdownxboxReleaseEurope">
+                        <li ng-repeat="year in conceptProposalSelectQuarter.years"><a ng-click="conceptProposalSelectQuarter.setYear(year)">{{ ::year}}</a></li>                        
+                      </ul>
+                </div>                
+                <button type="button" class="btn btn-secondary pull-right" data-ng-click="conceptProposalSelectQuarter.setQuarter()">Select</button> 
+            </nav>
+        </div>
+    </div>
+</div>      
+           
+          

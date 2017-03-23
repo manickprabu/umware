@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+    
+  <script type="text/javascript" src="http://code.angularjs.org/angular-1.0.1.js"></script>
+  <style type="text/css">
+    input.ng-dirty.ng-invalid {
+            background-color: red;
+        }
+
+        input[required].ng-pristine {
+            background-color: yellow;
+        }
+
+        input[required].ng-dirty.ng-valid {
+            background-color: yellow;
+        }
+  </style>
+  <title>Cancel / Reset </title>
+</head>
+<body ng-app="myApp">
+
+  <h2>AnguarJS: Reset to pristine state</h2>
+  <div ng-controller="MyCtrl">
+    <form name="form">
+        <input name="requiredField" 
+             type="text" 
+             ng-model="requiredField" 
+             required="required">Required field<br>
+      <button ng-click="reset()">Reset</button>
+    </form> 
+  </div>
+
+<script type='text/javascript'>//<![CDATA[
+
+var myApp = angular.module('myApp', []);
+
+function MyCtrl($scope) {
+    
+    $scope.reset = function() {
+        $scope.requiredField = '';
+    };
+}
+//]]> 
+
+</script>
+
+</body>
+
+</html>
+

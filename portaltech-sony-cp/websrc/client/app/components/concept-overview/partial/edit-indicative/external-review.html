@@ -1,0 +1,19 @@
+<div data-concept-proposal-modal-edit="overview.platform-information.proposed-platforms.edit"
+     data-instance="conceptProposalControllerReviewEdit.instance">
+
+    <h2 class="section-header" message-bundle="proposal.externalReview.title">
+    </h2>
+    <p class="section-intro" message-bundle="proposal.externalReview.introduction">
+    </p>
+    <div ng-controller="indicativeInformationEditController as indicativeInformationEditController">
+		<label class="checkbox-inline" for="externalReview">
+			<input type="checkbox" id="externalReview" name="question"
+    		data-ng-model="indicativeInformationEditController.field.value"  
+    		data-ng-model-options="{getterSetter: true}" />                
+    		<span class="ng-binding">{{indicativeInformationEditController.field.label}}</span>
+		</label>	    
+     </div>
+</div>
+
+
+

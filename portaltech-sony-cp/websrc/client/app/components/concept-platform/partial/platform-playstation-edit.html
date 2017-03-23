@@ -1,0 +1,64 @@
+
+<div data-concept-proposal-row-field="proposal.plannedCompetitorPlatforms">
+
+    <div class="table-masthead non-playstation">
+        <label for="SelectAll" class="checkbox-inline">
+            <input id="SelectAll" type="checkbox" name="selectAll" />
+            <span data-ng-click="competitorPlatformCtrl.toggleSelectAllPlatforms()">
+                <span ng-hide="competitorPlatformCtrl.isSelectAllPlatforms" message-bundle="proposal.plannedPlatforms.availability.selectAll"></span>
+                <span ng-show="competitorPlatformCtrl.isSelectAllPlatforms" message-bundle="proposal.plannedPlatforms.availability.deselectAll"></span>
+            </span>
+        </label>
+    </div>
+
+    <table class="table table-striped clearfix non-playstation" >
+    	<thead>
+            <tr>
+                <th message-bundle="proposal.plannedPlatforms.availability.platformColumnTitle"></th>
+                <th data-ng-repeat="competitorRegion in competitorPlatformCtrl.competitorRegions">
+                    {{ competitorRegion.name }}
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+        	<tr data-ng-repeat="selectedPlatform in competitorPlatformCtrl.availableCompetitorPlatform">
+    	    	<td>
+                    <label for="nonPSPlatformXbox{{$index}}" class="checkbox-inline">
+                        <input id="nonPSPlatformXbox{{$index}}" type="checkbox" name="nonPSPlatform"
+                            data-ng-model="selectedPlatform.selected"
+                            data-ng-model-options="{getterSetter: true, debounce: 50}"
+                            data-ng-checked="selectedPlatform.selected"
+                            data-ng-click="competitorPlatformCtrl.updatePlatform(selectedPlatform)"
+                            data-ng-change="sharedCheckboxController.checkboxes.change()"/>
+
+                            <span>{{selectedPlatform.name}}</span>
+                    </label>
+    	    	</td>
+
+    	    	<td ng-repeat="competitorRegion in selectedPlatform.regions" >
+                    <fieldset ng-disabled="!selectedPlatform.selected">
+            			<div class="form-group" >
+                            <div class="quarter-picker" ng-class="{focus : focus == true}">
+                                <input ng-focus="focus = true"
+                                    ng-blur="focus = false"
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="QX-YYYY"
+                                    data-ng-model="competitorRegion.value"
+                                    data-ng-change="competitorPlatformCtrl.releaseDateChanged()"
+                                    uib-popover-template="'app/components/concept-proposal/partial/popover/competitor-platform-quarter.html'"
+                                    popover-is-open="competitorRegion.isPopupOpen"
+                                    popover-trigger="outsideClick"
+                                    data-ng-click="competitorPlatformCtrl.onRegionFocus(selectedPlatform, competitorRegion)" />
+                                    <i class="fa fa-calendar icon-calendar" aria-hidden="true"></i>
+                                    <i class="fa fa-angle-down icon-arrow" aria-hidden="true"></i>
+                            </div>
+        				</div>
+                    </fieldset>
+        		</td>
+    		</tr>
+        </tbody>
+    </table>
+
+</div>

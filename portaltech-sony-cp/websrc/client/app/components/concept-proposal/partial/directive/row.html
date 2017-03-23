@@ -1,0 +1,17 @@
+
+<fieldset class="form-group">
+    
+    <legend class="control-label"></legend>     
+    
+    <label for="{{conceptProposalControllerRow.id()}}" class="control-label" data-ng-if="conceptProposalControllerRow.label()">
+        <span class="required" data-ng-if="conceptProposalControllerRow.required()">*</span>
+        {{conceptProposalControllerRow.label()}}
+
+        <a data-ng-if="conceptProposalControllerRow.information()" uib-popover="{{conceptProposalControllerRow.information()}}" popover-trigger="outsideClick" popover-placement="{{placement.selected}}">
+            <i class="fa fa-info-circle"></i>
+        </a>
+    </label>
+
+    <div data-ng-transclude></div>
+      
+</fieldset>

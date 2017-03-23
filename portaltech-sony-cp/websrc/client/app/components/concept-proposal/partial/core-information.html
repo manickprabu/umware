@@ -1,0 +1,48 @@
+<h2 class="h2" message-bundle="concept.overview.coreInformation.title"></h2>
+	<p class="contextual-copy" message-bundle="concept.overview.coreInformation.content"></p>
+	<a class="btn btn-tertiary" data-toggle="modal" data-ng-click="editConcept()" ng-if="conceptProposalControllerReview.partnersWithdrawnCheck"><span>Edit</span></a>
+
+	<table class="table table-striped clearfix">
+		<thead>
+			<tr>
+				<th id="conceptCoreInformation"><span message-bundle="concept.overview.coreInformation.title"></span></th>
+				<th id="conceptCoreInfoValues"><span class="sr-only">Values</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td headers="conceptCoreInformationFooter conceptCoreInformation"><span message-bundle="concept.overview.type.name"></span></td>
+				<td headers="conceptCoreInformationFooter conceptCoreInfoValues"><span>{{conceptProposalControllerReview.concept.conceptType}}</span></td>
+			</tr>
+			<tr>
+				<td headers="conceptCoreInformationFooter conceptCoreInformation"><span message-bundle="concept.overview.role.name"></span></td>
+				<td headers="conceptCoreInformationFooter conceptCoreInfoValues"><span>{{conceptProposalControllerReview.concept.leadRoles.join(', ')}}</span></td>
+			</tr>
+			<tr>
+				<td headers="conceptCoreInformationFooter conceptCoreInformation"><span message-bundle="concept.overview.nameEN.name"></span></td>
+				<td headers="conceptCoreInformationFooter conceptCoreInfoValues"><span>{{conceptProposalControllerReview.concept.nameEN}}</span></td>
+			</tr>
+			<tr>
+				<td headers="conceptCoreInformationFooter conceptCoreInformation"><span message-bundle="concept.overview.nameJP.name"></span></td>
+				<td headers="conceptCoreInformationFooter conceptCoreInfoValues"><span>{{conceptProposalControllerReview.concept.nameJA}}</span></td>
+			</tr>
+			<tr>
+				<td headers="conceptCoreInformationFooter conceptCoreInformation"><span message-bundle="concept.overview.codeNameEN.name"></span></td>
+				<td headers="conceptCoreInformationFooter conceptCoreInfoValues"><span>{{conceptProposalControllerReview.concept.codeNameEn}}</span></td>
+			</tr>
+			<tr>
+				<td headers="conceptCoreInformationFooter conceptCoreInformation"><span message-bundle="concept.overview.franchise.name"></span></td>
+				<td headers="conceptCoreInformationFooter conceptCoreInfoValues"><span>{{conceptProposalControllerReview.concept.franchise.name}}</span></td>
+			</tr>
+			<tr>
+				<td headers="conceptCoreInformationFooter conceptCoreInformation"><span message-bundle="concept.overview.genreSub.name"></span></td>
+				<td headers="conceptCoreInformationFooter conceptCoreInfoValues"><span> 
+				{{conceptProposalControllerReview.concept.superGenre.name}} / {{conceptProposalControllerReview.concept.categoryGenre.name}} </span></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th id="conceptCoreInformationFooter" colspan="2"><span class="sr-only">End of Table</span></th>
+			</tr>
+		</tfoot>
+	</table>

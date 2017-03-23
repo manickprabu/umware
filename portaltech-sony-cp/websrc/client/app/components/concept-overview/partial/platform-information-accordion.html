@@ -1,0 +1,193 @@
+<div role="tablist" aria-multiselectable="true" ng-repeat="platform in vm.PlannedPlatforms">
+	<div role="tab" id="headingOne">
+		<div class="row platform-collapse-selection">
+			<a class="platform-header collapsed" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="collapseOne"
+               ng-click="vm.selected[$index] = !vm.selected[$index]">
+				<h3 class="accordion-header">{{::platform.platform.name}}</h3>
+				{{::plaform.plannedRegions}}
+			</a>
+		</div>
+	</div>
+	<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" ng-class="{'in':vm.selected[$index]}">
+		<div>
+			<h2 class="h2" message-bundle="proposal.plannedPlatforms[PS4].exclusiveAtLaunch.title"></h2>
+			<p class="contextual-copy" message-bundle="proposal.plannedPlatforms[PS4].exclusiveAtLaunch.introduction"></p>										
+			<a class="btn btn-tertiary" data-toggle="modal" data-ng-click="vm.edit.exclusiveContent(platform.platform.name)" ng-if="vm.partnersWithdrawnCheckAccordion">Edit</a> 
+			<!-- Exclusive At Launch -->
+			<div class="row">
+				<table class="table table-striped clearfix">
+					<thead>
+						<tr>
+							<th id="exclusiveContentPS4" message-bundle="proposal.plannedPlatforms[PS4].exclusiveAtLaunch.title"></th>
+							<th id="exclusiveContentCommentPS4" message-bundle="proposal.plannedPlatforms[PS4].exclusivityComment"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td headers="exclusiveContentFooterPS4 exclusiveContentPS4"><span>{{platform.exclusiveAtLaunch | yesNo }}</span></td>
+							<td headers="exclusiveContentFooterPS4 exclusiveContentCommentPS4"><span>{{::platform.exclusivityComment}}</span></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th id="exclusiveContentFooterPS4" colspan="2"><span class="sr-only">End of Table</span></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			
+			<!-- Timeline : Planned regions -->
+			<h2 class="h2" message-bundle="proposal.plannedPlatforms.timeline.title"></h2>
+			<p class="contextual-copy" message-bundle="proposal.plannedPlatforms.timeline.introduction"></p>
+			<a class="btn btn-tertiary" data-toggle="modal" data-ng-click="vm.edit.platformTimeline(platform.platform.name)" ng-if="vm.partnersWithdrawnCheckAccordion">Edit</a>		
+
+			<div class="row" ng-if="platform.plannedRegions.length >0">
+				<table class="table table-striped clearfix">
+					<div>
+						<thead>
+							<tr>
+								<th ng-repeat="region in platform.plannedRegions">{{::region.region.name}}&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td headers="timelineFooterPS4 sieePS4" ng-repeat="plandate in platform.plannedRegions">
+									<span ng-show="plandate.releaseDate.date">{{::plandate.releaseDate.date | date:'dd-MMM-yyyy'}}</span>
+									<span ng-show="plandate.releaseDate.quarterTime">{{::plandate.releaseDate.quarterTime.quarter}}-{{::plandate.releaseDate.quarterTime.year}}</span>
+								</td>
+
+							</tr>
+						</tbody>
+					</div>
+					<tfoot>
+						<tr>
+							<th id="timelineFooterPS4" colspan="3"><span class="sr-only">End of Table</span></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<!-- Languages Distribution Media -->
+			<h2 class="h2" message-bundle="proposal.plannedPlatforms.languagesDistributionMedia.title"></h2>
+			<p class="contextual-copy" message-bundle="proposal.plannedPlatforms.languagesDistributionMedia.introduction"></p>
+			<a class="btn btn-tertiary" data-toggle="modal" data-ng-click="vm.edit.languageAndDistribution(platform.platform.name)" ng-if="vm.partnersWithdrawnCheckAccordion">Edit</a>
+
+			<div class="row">
+				<table class="table table-striped clearfix">
+					<thead>
+						<tr>
+							<th id="distributionPlatformPS4"><span message-bundle="proposal.plannedPlatforms[PS4].Platform.name"></span></th>
+							<th id="distributionRegionPS4"><span>{{::platform.platform.code}}</span></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="table-data-bold" headers="distributionFooterPS4 distributionPlatformPS4">
+								<span message-bundle="proposal.plannedPlatforms[PS4].plannedLanguages.information"></span>
+							</td>
+							<td headers="distributionFooterPS4 distributionRegionPS4">
+								<span ng-repeat="language in platform.plannedLanguages">{{::language.isocode | countryName}},&nbsp;</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-data-bold" headers="distributionFooterPS4 distributionPlatformPS4">
+								<span message-bundle="proposal.plannedPlatforms[PS4].plannedDistributionMedia.name"></span>
+							</td>
+							<td headers="distributionFooterPS4 distributionRegionPS4">
+								<span ng-repeat="media in platform.plannedDistributionMedia">{{::media.name}},&nbsp;</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-data-bold" headers="distributionFooterPS4 distributionPlatformPS4">
+								<span message-bundle="proposal.plannedPlatforms[PS4].businessModel.name"></span>
+							</td>
+							<td headers="distributionFooterPS4 distributionRegionPS4">
+								<span >{{platform.businessModel}}</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-data-bold" headers="distributionFooterPS4 distributionPlatformPS4">
+								<span message-bundle="proposal.plannedPlatforms[PS4].offlineMultiplayer.name"></span>
+							</td>
+							<td headers="distributionFooterPS4 distributionRegionPS4">
+								<span>{{platform.offlineMultiplayer | yesNo}}</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="table-data-bold" headers="distributionFooterPS4 distributionPlatformPS4">
+								<span message-bundle="proposal.plannedPlatforms[PS4].onlineMultiplayer.name"></span>
+							</td>
+							<td headers="distributionFooterPS4 distributionRegionPS4"><span>{{platform.onlineMultiplayer | yesNo}}</span></td>
+						</tr>
+						<tr>
+							<td class="table-data-bold" headers="distributionFooterPS4 distributionPlatformPS4">
+								<span message-bundle="proposal.plannedPlatforms[PS4].dlcIntension.name"></span>
+							</td>
+							<td headers="distributionFooterPS4 distributionRegionPS4"><span>{{platform.dlcIntension}}</span></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th id="distributionFooterPS4" colspan="2"><span class="sr-only">End of Table</span></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<!-- Planned Peripherals -->
+			<h2 class="h2" message-bundle="proposal.plannedPlatforms.peripheralUsage.title"></h2>
+			<p class="contextual-copy" message-bundle="proposal.plannedPlatforms.peripheralUsage.introduction"></p>
+			<a class="btn btn-tertiary" data-toggle="modal" data-ng-click="vm.edit.platformPlannedPeripherals(platform.platform.name)" ng-if="vm.partnersWithdrawnCheckAccordion" >Edit</a> 
+
+			<div class="row" >
+				<table class="table table-striped clearfix">
+					<thead>
+						<tr>
+							<th id="peripheralsPS4" message-bundle="proposal.plannedPlatforms[PSVita].Peripheral.name"></th>
+							<th id="reqOrOptionPS4" message-bundle="proposal.plannedPlatforms[PSVita].Peripheral.requiredOptionals"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="peripheral in platform.plannedPeripherals">
+							<td class="table-data-bold" headers="peripheralFooterPS4 peripheralsPS4"><span>{{::peripheral.peripheral.nameEN}}</span></td>
+							<td headers="peripheralFooterPS4 reqOrOptionPS4"><span>{{::peripheral.required | yesNo }}</span></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th id="peripheralFooterPS4" colspan="2"><span class="sr-only">End of Table</span></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<!-- Functionality : Planned Features -->
+			<h2 class="h2" message-bundle="proposal.plannedPlatforms.functionalityUsage.title"></h2>
+			<p class="contextual-copy" message-bundle="proposal.plannedPlatforms.functionalityUsage.introduction"></p>			
+			<a class="btn btn-tertiary" data-toggle="modal" data-ng-click="vm.edit.platformProposedFunctionality(platform.platform.name)" ng-if="vm.partnersWithdrawnCheckAccordion">Edit</a> 			
+			<div class="row" >
+				<table class="table table-striped clearfix">
+					<thead>
+						<tr>
+							<th id="functionPS4" message-bundle="proposal.plannedPlatforms[PSVita].functionalityUsage.name"></th>
+							<th id="functionReqOrOptionPS4" message-bundle="proposal.plannedPlatforms[PSVita].functionalityUsage.requiredOptionals"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="feature in platform.plannedFeatures">
+							<td class="table-data-bold" headers="functionFooterPS4 functionPS4">							
+							<span>{{feature.feature.nameEN}}</span></td>
+							<td headers="functionFooterPS4 functionReqOrOptionPS4"><span>{{feature.feature.active | yesNo}}</span></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th id="functionFooterPS4" colspan="2"><span class="sr-only">End of Table</span></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,177 @@
+
+<div>
+    <div class="breadcrumb-nav">
+        <ul class="container list-inline">
+            <li><span aria-hidden="true" class="fa fa-chevron-left"></span></li>
+            <li>
+                <!-- Breadcrumb navigation should be a component -->
+                <a href="#">Concepts</a>
+            </li>
+        </ul>
+    </div>
+    <div class="concept-all-product-group">
+        <div class="container">
+            <h1 class="h1" message-bundle="concept.listing.header.title"></h1>
+            <p class="contextual-copy" message-bundle="concept.listing.header.body"></p>
+            <p>
+                <a  class="btn btn-primary btn-lg text-right" href="/sonycp/#/concept/proposal/information"
+                    message-bundle="concept.listing.addConcept.button">
+                </a></p>
+            <p></p>
+        </div>
+    </div>
+
+    <div class="primary-nav primary-nav-alt">
+        <div class="container">
+            <uib-tabset active="active" class="list-inline">
+                <uib-tab index="$index + 1"
+                         ng-repeat="tab in entity.tabs"
+                         disable="tab.disabled"
+                         active="tab.active"
+                         ng-click="tab.selected = !tab.selected; filterByTab(tab)">
+                         <!-- {{tab.count}} -->
+                         <uib-tab-heading>
+                            {{tab.title}} ({{tab.count}})
+                         </uib-tab-heading>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+    </div>
+
+</div>
+
+<div class="tab-content">
+
+    <div class="tab-pane active" id="myConcepts" role="tabpanel">
+
+        <!-- Controlls -->
+        <div class="search-bar">
+            <div class="container ">
+                <div class="table-options">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <!-- Search component -->
+                            <div class="form-group search-box pull-left">
+                                <input type="text" class="search-results"  ng-change="updateFreeText()" isolate-click1="updateFilter" ng-model="searchField" placeholder="Search">
+                                <span class="fa fa-search" aria-hidden="true"></span>
+                            </div>
+                            <!-- Filters box here -->
+                            <div class="pull-left">
+                                <div class="form-group">
+                                    <div class="filterby-container dropdown pull-left">
+                                        <!-- Filter Controls -->
+                                        <button aria-expanded="true" aria-haspopup="true"
+                                                class="btn-concepts form-control btn btn-default filters dropdown-toggle user-page-dropdown"
+                                                uib-popover-template="templates.filterView"
+                                                popover-trigger="outsideClick"
+                                                popover-placement="bottom"
+                                                popover-is-open="filterPopoverOpen"
+                                                data-toggle="dropdown" id="conceptsShowName"
+                                                type="submit">
+                                                <span message-bundle="concept.listing.table.filter.label"></span>
+                                                <span class="badge">{{entity.filterCount}}</span>
+                                                <span class="fa fa-angle-down"></span>
+                                        </button>
+                                    </div>
+                                    <span class="text-left result-label">{{entity.itemFound}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table table-striped table-hover concept-listing-table">
+                <thead>
+                    <tr>
+                        <th id="conceptsConceptNameHead" message-bundle="concept.listing.table.header.name" 
+                            concept-order-by="name">
+                        </th>
+                        <th id="conceptsConceptFriendIdHead" message-bundle="concept.listing.table.header.friendlyId" concept-order-by="id"></th>
+                        <th id="conceptsConceptTypeHead" message-bundle="concept.listing.table.header.type" concept-order-by="type"></th>
+                        <th id="conceptsConceptPlatformHead" message-bundle="concept.listing.table.header.platforms" concept-order-by="proposal.plannedPlatforms"></th>
+                        <th id="conceptsConceptRegionHead" message-bundle="concept.listing.table.header.regions" concept-order-by="proposal.regions"></th>
+                        <th id="conceptsConceptOwnerHead" message-bundle="concept.listing.table.header.owner" concept-order-by="conceptLead"></th>
+
+                        <th id="conceptsConceptSubmitHead"
+                            ng-show="entity.user.isReviewer()" message-bundle="concept.listing.table.header.evaluator"></th>
+                        <th id="conceptsConceptSubmitHead" message-bundle="concept.listing.table.header.submitted" concept-order-by="submittedDate"></th>
+                        <th id="conceptsConceptStatusHead" message-bundle="concept.listing.table.header.status" concept-order-by="status"></th>
+                        <th id="conceptsConceptFeedbackHead" >
+                            <span class="sr-only" message-bundle="concept.listing.table.header.feedback"></span>
+                        </th>
+                        <th id="conceptsConceptComplianceHead"><span class="sr-only" message-bundle="concept.listing.table.header.compliance"></span></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr data-ng-repeat="item in entity.conceptList track by $index">
+                        <td headers="conceptsConceptFooter conceptsConceptNameHead">
+                            <a concept-link="item" href>
+                                <span ng-hide="item.nameEN" style="color: grey;font-style: italic;">undefined</span>
+                                <span ng-show="item.nameEN">{{item.nameEN}}</span>
+                            </a><br>
+                            <span class="concept-name-font-2">{{item.codeNameEN}}</span>
+                        </td>
+
+                        <td headers="conceptsConceptFooter conceptsConceptFriendIdHead"><span>{{item.id}}</span></td>
+                        <td headers="conceptsConceptFooter conceptsConceptTypeHead">
+                            <span>{{item.type}}</span>
+                        </td>
+
+                        <td headers="conceptsConceptFooter conceptsConceptPlatformHead">
+                            <div shared-active-pills list="item.proposal.plannedPlatforms" field="platforms"></div>
+                        </td>
+
+                        <td headers="conceptsConceptFooter conceptsConceptRegionHead">
+                            <div shared-active-pills list="item.proposal.regions" field="regions"></div>
+                        </td>
+
+                        <td headers="conceptsConceptFooter conceptsConceptOwnerHead">
+                            <span>{{item.conceptLead.name}}</span>
+                        </td>
+
+                        <td headers="conceptsConceptFooter conceptsConceptSubmitHead"
+                            ng-show="entity.user.isReviewer()"
+                            ng-include="'app/components/concept-listing/partial/assign-reviewer-view.html'" >
+                        </td>
+
+                        <td headers="conceptsConceptFooter conceptsConceptSubmitHead">
+                            <span>{{item.submittedDate | date : "dd.MM.y"}}</span>
+                        </td>
+
+                        <td headers="conceptsConceptFooter conceptsConceptStatusHead">
+                            <span>{{item.status}}</span>
+                        </td>
+                        <td headers="conceptsConceptFooter conceptsConceptFeedbackHead">
+                            <span aria-hidden="true" class="fa fa-comment active-state"
+                                ng-class="{'label-disabled': !item.externalFeedbackRequired}">
+                                <span class="sr-only">{{item.externalFeedbackRequired}}</span>
+                            </span>
+                        </td>
+
+                        <td headers="conceptsConceptFooter conceptsConceptComplianceHead">
+                            <span aria-hidden="true" class="fa fa-check active-state"
+                                  ng-class="{'label-disabled': !item.externalFeedbackRequired}">
+                                <span class="sr-only">Compliance</span>
+                            </span></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="10" id="conceptsConceptFooter">
+                            <span class="sr-only">End of Table</span>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- footer -->
+        <shared-paginator options="entity.paginationOptions"></shared-paginator>
+
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-ng-click="conceptProposalControllerAccountManagerDetails.closeModal()">
+        <span class="fa fa-close" aria-hidden="true"></span>
+        <span class="sr-only">Close Button</span>
+    </button>
+</div>
+<div class="account-manager modal-body">
+    <h2 message-bundle="accountManager.accountManagerDetails.title"></h2>
+    <p message-bundle="accountManager.accountManagerDetails.content"></p>
+    <p>
+        <strong><label message-bundle="accountManager.accountManagerDetails.name"></label></strong> :
+        <span>{{::conceptProposalControllerAccountManagerDetails.concept.accountManager.name}}</span>
+    </p>
+    <p>
+        <strong><label message-bundle="accountManager.accountManagerDetails.email"></label></strong> :
+        <span> <a href="mailto:{{conceptProposalControllerAccountManagerDetails.concept.accountManager.email}}">{{::conceptProposalControllerAccountManagerDetails.concept.accountManager.email}}</a></span>
+    </p>
+    <p>
+        <strong><label message-bundle="accountManager.accountManagerDetails.directLine"></label></strong> :
+        <span> {{::conceptProposalControllerAccountManagerDetails.concept.accountManager.phone}}</span>  
+    </p>
+</div>

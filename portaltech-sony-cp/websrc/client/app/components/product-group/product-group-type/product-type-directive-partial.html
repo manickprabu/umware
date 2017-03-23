@@ -1,0 +1,16 @@
+
+  <a class="selectable-anchor"
+     ng-click="productTypeDirectiveController.register()"
+     ng-class="{'disabled':!productTypeDirectiveController.product.enabled}"
+     href=""
+     popover-animation="true"
+     popover-placement="bottom"
+     uib-popover="{{productTypeDirectiveController.getMessage()}}"
+     popover-trigger="mouseenter"
+     title="">
+    <span class="fa {{productTypeDirectiveController.getIcon()}}" aria-hidden="true" ng-if="productTypeDirectiveController.product.icon"></span>
+    <span>{{productTypeDirectiveController.product.name}}</span>
+    <span class="badge" aria-hidden="true" ng-if="productTypeDirectiveController.product.titleId">ID</span>
+    <span class="badge" aria-hidden="true" ng-if="productTypeDirectiveController.product.gated">G</span>
+</a>
+

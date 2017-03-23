@@ -1,0 +1,7 @@
+<label class="checkbox-inline" data-ng-repeat="item in sharedCheckboxController.checkboxes.list()">
+    <input type="checkbox"
+        data-ng-model="sharedCheckboxController.checkboxes.model(item.value)"
+        data-ng-model-options="{getterSetter: true, debounce: 50}"
+        data-ng-change="sharedCheckboxController.checkboxes.change()"/> 
+        <span>{{item.label}}</span>
+</label>

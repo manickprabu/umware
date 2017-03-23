@@ -1,0 +1,39 @@
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+  <script type='text/javascript'>
+        function BundlerCtrl($scope) {
+            $scope.superGenres = {
+                'superGenre 1': {
+                    'subGenre 1a': ['subGenre_1a item 1', 'subGenre_1a item 2', 'subGenre_1a item 3'],
+                    'subGenre 1b': ['subGenre_1b item 1', 'subGenre_1b item 2']
+                },
+                'superGenre 2': {
+                    'subGenre 2a': ['subGenre_2a item 1', 'subGenre_2a item 2'],
+                    'subGenre 2b': ['subGenre_2b item 1', 'subGenre_2b item 2']
+                }
+            };
+        }
+  </script>
+<div ng-app> 
+  <div ng-controller="BundlerCtrl">
+      <p>As a logical dependency construction, the sub genre by default should be inactive first time the application is launched. The cascading effect of what goes into the sub-genre select options is based on selection in the Super Genre. Ones it is made active through selection.
+    <div>
+      [Genre]: 
+        <select id="genre" ng-model="subGenres" ng-options="genre for (genre, subGenres) in superGenres">
+          <option value=''>Select</option>
+        </select>
+    </div>
+
+    <div>
+        [Subgenre]: <select id="subGenre" ng-disabled="!subGenres" ng-model="genreLists" ng-options="subGenre for (subGenre, genreLists) in subGenres"><option value=''>Select</option></select>
+    </div>
+
+
+    <div>
+        [SubGenreList]: <select id="genreList" ng-disabled="!genreLists" ng-model="genreList" ng-options="genreList  for genreList in genreLists"><option value=''>Select</option></select>        
+    </div>
+  </div>
+  
+</div>
+
+

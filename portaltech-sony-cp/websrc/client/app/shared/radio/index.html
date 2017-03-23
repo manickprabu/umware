@@ -1,0 +1,8 @@
+
+<label class="radio-inline" data-ng-repeat="option in sharedRadioController.options.list()">
+    <input type="radio"
+        data-ng-model="sharedRadioController.options.model"
+        data-ng-model-options="{getterSetter: true}"
+        value="{{option.value}}" /> <span>{{option.label}}</span>
+</label>
+

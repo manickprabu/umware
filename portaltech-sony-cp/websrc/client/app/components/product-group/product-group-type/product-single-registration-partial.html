@@ -1,0 +1,13 @@
+
+<div class="container">
+    <div class="selectable-container">
+
+        <div ng-repeat="group in singleRegistrationController.productGroups">
+            <span class="control-label">{{group.name}}</span>
+            
+            <div class="selectable-container">
+                <span product-type="product" ng-repeat="product in group.types"></span>
+            </div>
+        </div>
+    </div>
+</div>

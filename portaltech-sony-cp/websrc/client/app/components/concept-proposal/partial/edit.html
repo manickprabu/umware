@@ -1,0 +1,132 @@
+<div id="editCoreConcept" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-horizontal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close" aria-hidden="true"></span><span class="sr-only">Close Button</span></button>
+                <h2 class="modal-title">Edit core concept information</h2>
+                <p class="modal-intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo rerum, explicabo officiis eius aliquam, dicta blanditiis facilis assumenda nisi aspernatur optio corporis earum sint quaerat tempora soluta praesentium quae rem.</p>
+                <div class="alert alert-warning" role="alert">Editing core concept information will impact products under this concept</div>
+            </div>
+            <form class="form-horizontal form-concept-proposal" action="#">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="conceptType" class="col-xs-3 control-label">
+                            Concept Type<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+                        </label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="conceptType" value="{{conceptReview.conceptType}}" placeholder="" disabled>
+                        </div>
+                    </div>
+
+                    <fieldset class="form-group">
+                        <legend class="control-label col-xs-3"><span class="required">*</span>
+                            Role<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+                        </legend>
+
+                        <div class="col-xs-9">
+
+                            <label for="editCoreConceptroleDeveloper" class="radio-inline">
+                                <input id="editCoreConceptroleDeveloper" type="radio" name="conceptRole" value="" />
+                                <span>Developer</span>
+                            </label>
+
+                            <label for="editCoreConceptrolePublisher" class="radio-inline">
+                                <input id="editCoreConceptrolePublisher" type="radio" name="conceptRole" value="" />
+                                <span>Publisher</span>
+                            </label>
+
+                            <label for="editCoreConceptroleBoth" class="radio-inline">
+                                <input id="editCoreConceptroleBoth" type="radio" name="conceptRole" value="" />
+                                <span>Both</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="conceptNameEn" class="col-xs-3 control-label"><span class="required">*</span>
+                            <span message-bundle="concept.overview.nameEN.name"></span>
+                            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+                        </label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="conceptNameEn" value="{{conceptReview.nameEN}}" placeholder="" required="required">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="conceptNameJp" class="col-xs-3 control-label" message-bundle="concept.overview.nameJP.name">
+                        </label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="conceptNameJp" value="{{conceptReview.nameJA}}" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codenameen" class="col-xs-3 control-label" message-bundle="concept.overview.codeNameEN.name">
+                        </label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="codenameen" value="{{conceptReview.codeNameEn}}" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codeNameJp" class="col-xs-3 control-label" message-bundle="concept.overview.codeNameJP.name">
+                        </label>
+
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" id="codeNameJp" value="{{conceptReview.codeNameJA}}" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="franchise" class="col-xs-3 control-label"><span class="required">*</span>
+                            <span message-bundle="concept.overview.franchise.name"></span>
+                            <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+                        </label>
+
+                        <div class="col-xs-9">
+                            <select class="form-control" id="franchise" required="required">
+                                <option value="">Please Select existing partners or add a new one</option>
+                                <option value="value1">Option 1</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genre" class="col-xs-3 control-label"><span class="required">*</span>
+                            Genre<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="right" title="" data-original-title="Additional field information"></i>
+                        </label>
+
+                        <div class="col-xs-9">
+                            <select class="form-control" id="genre" required="required">
+                                <option value="">Please Select existing partners or add a new one</option>
+                                <option value="value1">Option 1</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subgenre" class="col-xs-3 control-label">
+                            Subgenre
+                        </label>
+
+                        <div class="col-xs-9">
+                            <select class="form-control" id="subgenre">
+                                <option value="">Please Select existing partners or add a new one</option>
+                                <option value="value1">Option 1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link modal-dismiss" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-secondary">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

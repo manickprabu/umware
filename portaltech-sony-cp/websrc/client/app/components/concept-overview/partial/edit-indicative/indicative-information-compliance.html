@@ -1,0 +1,22 @@
+<div data-concept-proposal-modal-edit="overview.platform-information.proposed-platforms.edit"
+     data-instance="conceptProposalControllerReviewEdit.instance">
+
+    <div ng-controller="indicativeInformationEditController as indicativeInformationEditController">
+
+    	<div data-ng-repeat="field in indicativeInformationEditController.complianceFields">
+		    <div data-concept-proposal-row-field-edit="{{field.radio.name}}">
+		        <div data-shared-radio="field.radio.config"></div>
+		    </div>
+
+		    <div data-ng-if="!field.radio.model.empty()">
+		        <div data-concept-proposal-row-field-edit="{{field.comment.name}}">
+		            <textarea id="comments" class="form-control" name="comments" 
+		                placeholder="Type here" 
+		                data-ng-model="field.comment.model.value"
+		                data-ng-model-options="{getterSetter: true}" cols="100" rows="4">
+		            </textarea>
+		        </div>	
+		    </div>    
+		</div> 
+    </div>
+</div>

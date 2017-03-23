@@ -1,0 +1,27 @@
+<div data-concept-proposal-row
+    data-ng-if="conceptProposalControllerRowField.field.visible()"
+    data-id="{{conceptProposalControllerRowField.field.name()}}"
+    data-label="{{conceptProposalControllerRowField.field.label()}}"
+    data-required="{{conceptProposalControllerRowField.field.required()}}"
+    data-information="{{conceptProposalControllerRowField.field.information()}}">
+
+    <div>
+        <div data-ng-transclude></div>
+
+        <div class="error"
+            data-ng-show="conceptProposalControllerRowField.field.empty() && conceptProposalControllerRowField.field.getRequiredMessage()">
+            <!-- <i class="fa-exclamation fa error validation-icon pull-right"></i> -->
+            <i class="fa-ban fa error validation-icon pull-right"></i>
+        </div>
+
+        <div class="valid" data-ng-hide="conceptProposalControllerRowField.field.empty()">
+            <!-- <i class="fa-check fa valid validation-icon pull-right"></i> -->
+            <i class="fa-check-circle-o fa valid validation-icon pull-right"></i>
+        </div>
+
+    </div>
+
+    <div style="color: red;" data-ng-if="conceptProposalControllerRowField.field.getRequiredMessage()">
+        {{conceptProposalControllerRowField.field.getRequiredMessage()}}
+    </div>
+</div>

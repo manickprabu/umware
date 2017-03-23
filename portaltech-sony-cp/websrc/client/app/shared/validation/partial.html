@@ -1,0 +1,19 @@
+<form ng-app="sharedClientValidation" class="row form-horizontal" novalidate>
+  <div class="control-group">
+    <label class="control-label" for="inputField">Concept Name</label>
+    <div class="controls">
+      <input ng-model="textInput" class="immediate-help" input-validate required type="text" id="inputField" placeholder="">
+      <div class="input-help">
+        <ul>
+          <li ng-class="textHasLetters">This field can not be empty</li>
+        </ul>
+      </div>
+    </div>
+   </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn">Submit Concept</button>
+      <button class="btn" disabled>Submit Concept</button>
+    </div>
+   </div>
+</form>

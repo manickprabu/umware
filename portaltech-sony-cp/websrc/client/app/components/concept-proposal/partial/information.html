@@ -1,0 +1,161 @@
+<!--added "name" and  "required" attributes to form fields for VALIDATION purposes::See index.js-->
+<div class="container">
+    <!-- Concept Proposal Introduction -->
+    <div class="row">
+        <div class="col-xs-12">
+            <p class="intro">
+                <span message-bundle="introduction.text"></span>
+                <a href="{{conceptProposalControllerIndex.message('introduction.link.url')}}" message-bundle="introduction.link.label"></a>
+            </p>
+        </div>
+    </div>
+    <!-- Regional Availability-->
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="section-header" message-bundle="proposal.regions.title"></h2>
+            <p class="section-intro">
+                <span message-bundle="proposal.regions.introduction"></span>
+                <a href="{{conceptProposalControllerIndex.message('proposal.regions.link.url')}}" message-bundle="proposal.regions.link.label"></a>
+            </p>
+        </div>
+    </div>
+    <!-- End Regional Availability-->
+    <div data-concept-proposal-row-field="proposal.regions">
+        <div data-shared-checkbox="conceptProposalControllerProposal.config.regions"></div>
+    </div>
+
+    <!-- Interactive Regional Map -->
+    <div data-interactive-map class="interactive-map"></div>
+
+    <!--Core Concept Information-->
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="section-header" message-bundle="core.title"></h2>
+            <p class="section-intro" message-bundle="core.introduction"></p>
+        </div>
+    </div>
+    <!--End Concept Information-->
+
+    <!-- Concept Roles-->
+    <div concept-proposal-row-field="leadRoles">
+        <div shared-radio="conceptProposalControllerProposal.config.leadRoles"></div>
+    </div>
+    <!--End Concept Roles-->
+
+    <!-- Concept Type -->
+    <div data-concept-proposal-row-field="conceptType">
+        <div shared-radio="conceptProposalControllerProposal.config.type"></div>
+    </div>
+    <!-- End Concept Type -->
+
+    <!-- Concept Name Fields -->
+
+    <div class="concept-name en" data-concept-proposal-row-field="nameEN">
+        <div data-concept-proposal-text-field="nameEN"></div>
+    </div>
+
+    <div class="button-controls clearfix">
+        <button type="button" class="btn btn-tertiary" data-ng-if="!conceptProposalControllerIndex.show.conceptName()" data-ng-click="conceptProposalControllerIndex.show.conceptName(true)" message-bundle="core.addJapaneseConceptName"></button>
+
+        <!--         <button type="button" class="btn btn-tertiary danger"
+                data-ng-if="conceptProposalControllerIndex.show.conceptName()"
+                data-ng-click="conceptProposalControllerIndex.show.conceptName(false)"
+                message-bundle="core.removeJapaneseConceptName">
+        </button>
+ -->
+        <button type="button" class="btn btn-tertiary" data-ng-if="!conceptProposalControllerIndex.show.codeName()" data-ng-click="conceptProposalControllerIndex.show.codeName(true)" message-bundle="core.addCodeName"></button>
+
+        <button type="button" class="btn btn-tertiary danger" data-ng-if="conceptProposalControllerIndex.show.codeName()" data-ng-click="conceptProposalControllerIndex.show.codeName(false)" message-bundle="core.removeCodeName"></button>
+    </div>
+
+    <div class="concept-name jp" data-concept-proposal-row-field="nameJA">
+        <div data-concept-proposal-text-field="nameJA"></div>
+    </div>
+
+    <div data-concept-proposal-row-field="codeNameEn">
+        <div data-concept-proposal-text-field="codeNameEn"></div>
+    </div>
+
+    <!--End Concept Name-->
+
+    <!-- Franchise -->
+    <div concept-proposal-row-field="franchise">
+        <div id="franchiseDropDown" shared-dropdown="conceptProposalControllerProposal.config.franchise.core" first-item="conceptProposalControllerProposal.config.franchise.first"></div>
+    </div>
+    <!-- End Franchise -->
+
+    <!--Genre and Sub genre  category selection-->
+
+    <div concept-proposal-row-field="superGenre">
+        <div shared-dropdown="conceptProposalControllerProposal.config.superGenre"></div>
+    </div>
+    <div concept-proposal-row-field="categoryGenre">
+        <div shared-dropdown="conceptProposalControllerProposal.config.categoryGenre"></div>
+    </div>
+    <!--End Genre and Sub genre  category selection-->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 message-bundle="proposal.targetAge.title"></h2>
+            <p message-bundle="proposal.targetAge.introduction"></p>
+        </div>
+    </div>
+
+    <div concept-proposal-row-field="proposal.targetAge">
+        <div shared-dropdown="conceptProposalControllerProposal.config.age"></div>
+    </div>
+    <!--end of drop down-->
+
+    <!--Game Design File Attachements-->
+    <div ng-show="conceptProposalControllerProposal.show('proposal.gameDesignDocuments[EN]') || conceptProposalControllerProposal.show('proposal.gameDesignDocuments[JA]')">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="section-header" message-bundle="proposal.gameDesignDocuments.title"></h2>
+                <p class="section-intro">
+                    <span message-bundle="proposal.gameDesignDocuments.introduction"></span>
+                    <a href="{{conceptProposalControllerIndex.message('proposal.gameDesignDocuments.link.url')}}" message-bundle="proposal.gameDesignDocuments.link.label"></a>
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group" concept-proposal-row-field="proposal.gameDesignDocuments[EN]">
+            <div shared-file="conceptProposalControllerProposal.config.gameDesignDocumentEN" field-language="en" class="attachments"></div>
+        </div>
+
+        <div class="form-group" concept-proposal-row-field="proposal.gameDesignDocuments[JA]">
+            <div shared-file="conceptProposalControllerProposal.config.gameDesignDocumentJA" field-language="ja" class="attachments"></div>
+        </div>
+    </div>
+
+    <!--Other Attachments-->
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="section-header" message-bundle="proposal.attachments.title"></h2>
+            <p class="section-intro" message-bundle="proposal.attachments.introduction"></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div concept-proposal-row-field="proposal.attachments">
+            <div shared-file="conceptProposalControllerProposal.config.attachments" field-language="en" class="attachments"></div>
+        </div>
+    </div>
+    <!--End File Attachements-->
+
+    <!--External review-->
+    <h2 class="section-header" message-bundle="proposal.externalReview.title"></h2>
+    <p class="section-intro" message-bundle="proposal.externalReview.introduction"></p>
+    <div class="form-group control-label">
+        <label class="externalReviewCheckbox checkbox-inline" ng-click="conceptProposalControllerProposal.selectExternalReview($event)">
+            <input type="checkbox" id="externalReview" name="question" data-ng-model="conceptProposalControllerProposal.externalReview.value" data-ng-model-options="{getterSetter: true}"/>
+
+            <span message-bundle="proposal.externalFeedbackRequired.name"></span>
+            <!-- TODO: Remove hard coded text from Popover content -->
+        </label>
+        <a href="" uib-popover="Please submit your proposal for review" popover-trigger="outsideClick" popover-placement="right">
+            <i class="fa fa-info-circle"></i>
+        </a>
+
+    </div>
+    <!--End External review-->
+</div>

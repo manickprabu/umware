@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="section-header" message-bundle="compliance.occCompliance.page.title"></h2>
+            <p class="section-intro">
+                <span message-bundle="compliance.occCompliance.page.introduction"></span>
+                <a href="{{conceptProposalControllerIndex.message('introduction.link.url')}}" message-bundle="compliance.occCompliance.introduction.link.label">
+                </a>
+            </p>
+
+            <div data-ng-repeat="field in conceptProposalControllerCompliance.fields">
+                <div data-concept-proposal-row-field="{{field.radio.name}}">
+                    <div data-shared-radio="field.radio.config"></div>
+                </div>
+
+                <div data-ng-if="!field.radio.model.empty()">
+                    <div data-concept-proposal-row-field="{{field.comment.name}}">
+                        <textarea id="comments" class="form-control" name="comments" 
+                            placeholder="Type here" 
+                            data-ng-model="field.comment.model.value"
+                            data-ng-model-options="{getterSetter: true}" cols="100" rows="4">
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="section-header" message-bundle="compliance.legalDisclaimerAccepted.name"></h2>
+            <p class="section-intro" message-bundle="compliance.legalDisclaimerAccepted.introduction"></p>
+
+            <div class="form-group" data-concept-proposal-row-field="compliance.legalDisclaimerAccepted">
+                <label for="legalDisclaimerAccepted" class="checkbox-inline">
+                    <input type="checkbox" id="legalDisclaimerAccepted" name="question"
+                        data-ng-model="conceptProposalControllerIndex.legalDisclaimerAccepted.value"   
+                        data-ng-model-options="{getterSetter: true}"
+                        />
+                        <span message-bundle="compliance.legalDisclaimerAccepted.label"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>

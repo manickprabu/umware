@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="col-xs-11">
+
+    <h4 class="row-title"> Search Criteria </h4>
+    <form [formGroup]="form" (ngSubmit)="performSearch($event)">
+      <div class="criteria-wrap clearfix">
+        <app-fields [fieldData]="fieldsList" [formGroup]="form"></app-fields>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary col-xs-12 col-sm-2 float-sm-right" type="submit" [disabled]="!form.valid">Update Result</button>
+      </div>
+    </form>
+    <br>
+    <h4 class="row-title"> Search Results </h4>
+    <app-list [dataset]='searchResult' [showView]='false'></app-list>
+
+  </div>
+</div>

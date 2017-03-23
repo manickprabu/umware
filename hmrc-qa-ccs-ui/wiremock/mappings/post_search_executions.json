@@ -1,0 +1,184 @@
+{
+    "request": {
+        //"method": "POST",
+        "urlPath": "/ccs/v1/search-executions"
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Authorization, Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "PUT, OPTIONS"
+        },
+        "jsonBody": [
+            {
+                "documentId": "0900b10980001e01",
+                "caseId": "arul01",
+                "metadata": {
+                    "type": "cf_document",
+                    "metadataMap": {
+                        "reason": "",
+                        "fileName": "arul2.txt",
+                        "telephoneNumber": "",
+                        "city": "",
+                        "dateOfBirth": "",
+                        "team": "",
+                        "important": "0",
+                        "utr": "hello",
+                        "phoneNumber": "",
+                        "uploadDate": "2017-02-02T15:41:45.000+00:00",
+                        "name": "",
+                        "location": "",
+                        "memoDate": null,
+                        "receivedDate": null,
+                        "nameOfFirm": ""
+                    }
+                }
+            },
+            {
+                "documentId": "0900b10980001e01",
+                "caseId": "arul02",
+                "metadata": {
+                    "type": "cf_document",
+                    "metadataMap": {
+                        "reason": "",
+                        "fileName": "arul2.txt",
+                        "telephoneNumber": "",
+                        "city": "",
+                        "dateOfBirth": "",
+                        "team": "",
+                        "important": "0",
+                        "utr": "hello",
+                        "phoneNumber": "",
+                        "uploadDate": "2017-02-02T15:41:45.000+00:00",
+                        "name": "",
+                        "location": "",
+                        "memoDate": null,
+                        "receivedDate": null,
+                        "nameOfFirm": ""
+                    }
+                }
+            },
+            {
+                "documentId": "0900b10980001e01",
+                "caseId": "arul03",
+                "metadata": {
+                    "type": "cf_document",
+                    "metadataMap": {
+                        "reason": "",
+                        "fileName": "arul2.txt",
+                        "telephoneNumber": "",
+                        "city": "",
+                        "dateOfBirth": "",
+                        "team": "",
+                        "important": "0",
+                        "utr": "hello",
+                        "phoneNumber": "",
+                        "uploadDate": "2017-02-02T15:41:45.000+00:00",
+                        "name": "",
+                        "location": "",
+                        "memoDate": null,
+                        "receivedDate": null,
+                        "nameOfFirm": ""
+                    }
+                }
+            },
+            {
+                "documentId": "0900b10980001e01",
+                "caseId": "arul04",
+                "metadata": {
+                    "type": "cf_document",
+                    "metadataMap": {
+                        "reason": "",
+                        "fileName": "arul2.txt",
+                        "telephoneNumber": "",
+                        "city": "",
+                        "dateOfBirth": "",
+                        "team": "",
+                        "important": "0",
+                        "utr": "hello",
+                        "phoneNumber": "",
+                        "uploadDate": "2017-02-02T15:41:45.000+00:00",
+                        "name": "",
+                        "location": "",
+                        "memoDate": null,
+                        "receivedDate": null,
+                        "nameOfFirm": ""
+                    }
+                }
+            },
+            {
+                "documentId": "0900b10980001e01",
+                "caseId": "arul05",
+                "metadata": {
+                    "type": "cf_document",
+                    "metadataMap": {
+                        "reason": "",
+                        "fileName": "arul2.txt",
+                        "telephoneNumber": "",
+                        "city": "",
+                        "dateOfBirth": "",
+                        "team": "",
+                        "important": "0",
+                        "utr": "hello",
+                        "phoneNumber": "",
+                        "uploadDate": "2017-02-02T15:41:45.000+00:00",
+                        "name": "",
+                        "location": "",
+                        "memoDate": null,
+                        "receivedDate": null,
+                        "nameOfFirm": ""
+                    }
+                }
+            },
+            {
+                "documentId": "0900b10980001e01",
+                "caseId": "arul06",
+                "metadata": {
+                    "type": "cf_document",
+                    "metadataMap": {
+                        "reason": "",
+                        "fileName": "arul2.txt",
+                        "telephoneNumber": "",
+                        "city": "",
+                        "dateOfBirth": "",
+                        "team": "",
+                        "important": "0",
+                        "utr": "hello",
+                        "phoneNumber": "",
+                        "uploadDate": "2017-02-02T15:41:45.000+00:00",
+                        "name": "",
+                        "location": "",
+                        "memoDate": null,
+                        "receivedDate": null,
+                        "nameOfFirm": ""
+                    }
+                }
+            },
+            {
+                "documentId": "0900b10980001e02",
+                "caseId": "case1",
+                "metadata": {
+                    "type": "cf_document",
+                    "metadataMap": {
+                        "reason": "",
+                        "fileName": "arul3.txt",
+                        "telephoneNumber": "",
+                        "city": "",
+                        "dateOfBirth": "",
+                        "team": "",
+                        "important": "0",
+                        "utr": "hello",
+                        "phoneNumber": "",
+                        "uploadDate": "2017-02-02T15:41:45.000+00:00",
+                        "name": "",
+                        "location": "",
+                        "memoDate": null,
+                        "receivedDate": null,
+                        "nameOfFirm": ""
+                    }
+                }
+            }
+        ]
+    }
+}

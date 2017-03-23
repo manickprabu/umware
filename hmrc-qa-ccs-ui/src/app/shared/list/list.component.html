@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <app-notification [message]="errorMessage"></app-notification>
+  <table *ngIf="hasData" class="row table table-responsive table-hover table-striped table-bordered">
+    <thead class="thead-default">
+      <tr>
+        <th *ngIf='showView'>&nbsp;</th>
+        <th *ngFor="let c of cols">
+          <app-header [headerData]="c"></app-header>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of dataset; let i = index">
+        <td *ngIf='showView'>
+          <button (click)='OnView(i)' class='btn btn-primary'>View</button>
+        </td>
+        <td *ngFor="let c of cols">
+          <app-row [rowData]="getValue(i,c)"></app-row>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

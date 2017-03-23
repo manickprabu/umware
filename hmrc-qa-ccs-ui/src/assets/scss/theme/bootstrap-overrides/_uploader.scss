@@ -1,0 +1,50 @@
+/* File Uploader Styles  */
+
+.uploader input {
+  display: none;
+}
+
+.uploader {
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #efefef;
+  background-color: #c8dadf;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  height: 300px;
+  -webkit-justify-content: center;
+  justify-content: center;
+  outline: 2px dashed #92b0b3;
+  outline-offset: 5px;
+  position: relative;
+  width: 100%;
+  .icon{
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    -ms-transition: all 100ms ease-in;
+    -o-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    margin: 0 auto;      
+  }
+}
+
+
+.uploader,
+.uploader .icon {
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -ms-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+  margin: 0 auto;
+}
+
+.uploader .icon {
+  color: #eee;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 5em;
+}
+.icon-upload{
+    color: #92b0b3
+}

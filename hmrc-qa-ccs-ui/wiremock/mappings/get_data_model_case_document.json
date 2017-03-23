@@ -1,0 +1,74 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPath": "/ccs/v1/metadata-models/case_document"
+    },
+    "response": {
+        "status": 200,
+        "headers" : {
+            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Headers": "Authorization, Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "PUT, OPTIONS"
+        },
+        "jsonBody": {
+                      "type": "case_document",
+                      "fieldDefinitions": [
+				{
+					"name": "version",
+					"label": "Version",
+					"mandatory": true,
+					"updateable": true,
+					"type": "Text",
+					"format": null,
+					"defaultValue": null
+				},
+				{
+                                        "name": "fileName",
+                                        "label": "File Name",
+                                        "mandatory": true,
+                                        "updateable": true,
+                                        "type": "Checkbox",
+                                        "format": null,
+                                        "defaultValue": null
+                                },
+				{
+                                        "name": "contentType",
+                                        "label": "Content Type",
+                                        "mandatory": true,
+                                        "updateable": true,
+                                        "type": "Text",
+                                        "format": null,
+                                        "defaultValue": null
+                                },
+				{
+                                        "name": "uploadDate",
+                                        "label": "Upload Date",
+                                        "mandatory": true,
+                                        "updateable": true,
+                                        "type": "Text",
+                                        "format": null,
+                                        "defaultValue":null
+                                },
+				{
+                                        "name": "utr",
+                                        "label": "UTR",
+                                        "mandatory": true,
+                                        "updateable": true,
+                                        "type": "Text",
+                                        "format": null,
+                                        "defaultValue": null
+                                },
+				{
+                                        "name": "documentType",
+                                        "label": "Document Type",
+                                        "mandatory": true,
+                                        "updateable": true,
+                                        "type": "Text",
+                                        "format": null,
+                                        "defaultValue": null
+                                }
+			]
+                }
+    }
+}
+

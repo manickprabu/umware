@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <strong>{{searchData.name}}</strong>
+  </div>
+  <div class="card-block">
+    <div class="row">
+      <div class='col' *ngFor='let prop of searchData.searchCriteria, let i = index'>
+        <strong>{{prop.name}}:</strong><br />
+        <span>{{prop.value ? prop.value : '-'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-right">
+    <span><button (click)='OnSearch()' class='btn btn-primary'>Search</button></span>
+  </div>
+</div>

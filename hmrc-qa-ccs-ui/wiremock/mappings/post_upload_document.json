@@ -1,0 +1,32 @@
+{
+    "request": {
+        // "method": "POST",
+        "urlPath": "/ccs/v1/cases/case-123/documents"
+    },
+    "response": {
+        "status": 200,
+		"headers" : {
+            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Headers": "Authorization, Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "PUT, OPTIONS"
+        },
+		"jsonBody": {
+          "responseInfo":{
+					"requestId":"3276f3e213a8d4e",
+					"responseId":"6435rb2ac2334e",
+					"serviceId":"123"
+					},
+					"responseCode":"OK",
+					"totalExecutionTime":"345",
+					"documentId":"567364",
+					"metadata":{
+						"customerId":"customer1",
+						"sourceSystem":"pega",
+						"receivedDate":"2012-03-31T18:25:43.511Z",
+						"uploadDate":"2012-11-14T09:30:12.345Z",
+						"contentType":"pdf",
+						"UTR":"409854381221"
+					}
+        }	
+    }
+}

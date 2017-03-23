@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="col-xs-11">
+
+    <app-notification [message]='notice'></app-notification>
+    <h1>Predefined Searches</h1>
+    <div class="row" style="margin-bottom:1em" *ngFor='let search of dataSource'>
+      <div class="col">
+        <app-card-view [searchData]='search' (OnSearchClick)='OnSearch($event)'></app-card-view>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+{
+    "request": {
+        // "method": "POST",
+        "urlPath": "/ccs/v1/cases/case-123"
+    },
+    "response": {
+        "status": 200,
+        "headers" : {
+            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Headers": "Authorization, Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "PUT, OPTIONS"
+        },
+        "jsonBody": {
+            "status":"Ok"
+         }
+    }
+}
+

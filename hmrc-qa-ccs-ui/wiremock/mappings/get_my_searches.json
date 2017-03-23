@@ -1,0 +1,256 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPath": "/ccs/v1/searches/my-searches"
+    },
+    "response": {
+        "status": 200,
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Authorization, Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "PUT, OPTIONS"
+        },
+        "jsonBody": [
+            {
+                "name": "MY Searches",
+                "searchCriteria": [
+                    {
+                        "name": "Key Words",
+                        "value": "pdf",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Classification",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Origin",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Date Of Document",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Received",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Sent",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Tax regime",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Protective Marketings",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Scanned",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Uploaded",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Replied",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    }
+                ]
+            },
+            {
+                "name": "Capital Gains Tax third quarter of 2017",
+                "searchCriteria": [
+                    {
+                        "name": "Key Words",
+                        "value": "pdf",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Classification",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Origin",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Date Of Document",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Received",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Sent",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Tax regime",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Protective Marketings",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Scanned",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Uploaded",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Replied",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    }
+                ]
+            },
+            {
+                "name": "Everything this year",
+                "searchCriteria": [
+                    {
+                        "name": "Key Words",
+                        "value": "pdf",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Classification",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Origin",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Date Of Document",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Received",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Sent",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Tax regime",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Protective Marketings",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Scanned",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Uploaded",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Replied",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    }
+                ]
+            },
+            {
+                "name": "All internal docs within six months",
+                "searchCriteria": [
+                    {
+                        "name": "Key Words",
+                        "value": "pdf",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Classification",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Origin",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Date Of Document",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Received",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Sent",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Tax regime",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Protective Marketings",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Scanned",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Uploaded",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    },
+                    {
+                        "name": "Replied",
+                        "value": "123456",
+                        "operation": "EQUALS"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPath": "/ccs/v1/metadata-models/cf_case_folder"
+    },
+    "response": {
+        "status": 200,
+        "headers" : {
+            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Headers": "Authorization, Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "PUT, OPTIONS"
+        },
+        "jsonBody": {
+                      "type": "cf_case_folder",
+                      "fieldDefinitions": [
+                        {
+                            "name": "caseCreator",
+                            "label": "Case Creator",
+                            "mandatory": true,
+                            "updateable": true,
+                            "type": "Text",
+                            "format": null,
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "caseTeam",
+                            "label": "Case Team",
+                            "mandatory": true,
+                            "updateable": true,
+                            "type": "Text",
+                            "format": null,
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "caseStatus",
+                            "label": "Case Status",
+                            "mandatory": true,
+                            "updateable": true,
+                            "type": "Text",
+                            "format": null,
+                            "defaultValue": null
+                      }]
+			
+                    }
+    }
+}
+

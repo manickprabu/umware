@@ -1,0 +1,9 @@
+{
+    "request": {
+        "urlPath": "/"
+    },
+    "response": {
+        "status": 200,
+        "body": "RESPONSE FROM ANY"
+    }
+}

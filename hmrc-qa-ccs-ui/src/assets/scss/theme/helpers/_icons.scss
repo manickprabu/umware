@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'ifs-icons';
+  src:  url('../fonts/icons/ifs-icons.eot?htjrwl');
+  src:  url('../fonts/icons/ifs-icons.eot?htjrwl#iefix') format('embedded-opentype'),
+  url('../fonts/icons/ifs-icons.ttf?htjrwl') format('truetype'),
+  url('../fonts/icons/ifs-icons.woff?htjrwl') format('woff'),
+  url('../fonts/icons/ifs-icons.svg?htjrwl#ifs-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"], .icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ifs-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 1.7rem;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dashboard:before {
+  content: "\e900";
+}
+
+.icon-file-discard:before {
+  content: "\e901";
+}
+
+.icon-edit:before {
+  content: "\e902";
+}
+
+.icon-password:before {
+  content: "\e903";
+}
+
+.icon-sign-out:before {
+  content: "\e904";
+}
+
+.icon-success:before {
+  content: "\e905";
+}
+
+.icon-upload:before {
+  content: "\e906";
+}
+
+.icon-user:before {
+  content: "\e907";
+}
+
+.icon-file-add:before {
+  content: "\e908";
+}
+
+.icon-alert:before {
+  content: "\e909";
+}
+
+.icon-delete:before {
+  content: "\e90a";
+}
+
+.icon-calendar:before {
+  content: "\e90b";
+}
+
+.icon-sm {
+  font-size: 1rem;
+}
+
+.icon-lg {
+  font-size: 2.4rem;
+}
+
+.icon-xl {
+  font-size: 3.2rem;
+}
+
+

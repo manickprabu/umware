@@ -1,0 +1,8 @@
+@function pem($px: 12,$parent-px: 14){
+  @return #{$px/$parent-px}em;
+}
+
+@function prem($size, $body-font-size: 16) {
+  $remSize: $size / $body-font-size;
+  @return #{$remSize}rem;
+}

@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="col-xs-11">
+        <h1>Create Case</h1>
+        <app-notification [message]="status"></app-notification>
+        <form [formGroup]="form" (ngSubmit)="onSubmit($event)" *ngIf="showForm">
+            <app-fields [fieldData]="caseFields" [formGroup]="form"></app-fields>
+            <div class="form-group">
+                <button class="btn btn-primary col-xs-12 col-sm-2 float-sm-right" type="submit" [disabled]="!form.valid">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

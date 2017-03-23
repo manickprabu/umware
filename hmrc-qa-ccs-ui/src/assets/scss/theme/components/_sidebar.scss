@@ -1,0 +1,47 @@
+.sidebar {
+  background-color: #525559;
+  position: fixed;
+  top: 54px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+  .nav-stacked {
+    clear: both;
+    .nav-item {
+      width: 100%;
+      border-bottom: 1px solid #6c6d6e;
+      padding: 15px 10px;
+      text-align: center;
+      &:hover{
+        background-color: lighten(#666, 20%);
+        cursor: pointer;
+      }
+      &.active {
+        background-color: lighten(#666, 10%);
+        color: white;
+        &:after {
+          content: "";
+          height: 20px;
+          width: 20px;
+          position: absolute;
+          right: -10px;
+          background-color: #666;
+          transform: rotate(45deg)
+        }
+      }
+      &[class^="icon-"], &[class*=" icon-"] {
+        display: block;
+        text-align: center;
+        margin-bottom: 6px;
+      }
+    }
+    .nav-item + .nav-item {
+      margin: 0;
+    }
+  }
+
+}

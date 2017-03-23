@@ -1,0 +1,11 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPath": "/ccs/v1/metadata-models/invalid_type"
+    },
+    "response": {
+        "status": 404,
+        "jsonBody": {}
+    }
+}
+

@@ -1,0 +1,18 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPath": "/ccs/v1/metadata-models/types"
+    },
+    "response": {
+        "status": 200,
+        "headers" : {
+            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Headers": "Authorization, Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Methods": "PUT, OPTIONS"
+        },
+        "jsonBody": [
+        			"case_document",
+    				"cf_case_folder"
+    		]
+    }
+}

@@ -1,0 +1,13 @@
+
+Run basic:
+
+$ java -jar wiremock-standalone-2.3.1.jar
+
+Add port:
+
+$ java -jar wiremock-standalone-2.3.1.jar --port 9080
+
+Record:
+
+java -jar wiremock-standalone-2.3.1.jar --port 9080 --record-mappings --verbose
+

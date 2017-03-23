@@ -1,0 +1,16 @@
+{
+      "application":{
+          "dev":"http://localhost:8080",
+          "prod":"http://localhost:10581"
+      },
+      "urls":{
+          "docTypes":"/ccs/v1/metadata-models/types",
+          "metaDataFields":"/ccs/v1/metadata-models/:formId",
+          "ingestionCase":"/ccs/v1/cases/:caseId",
+          "uploadDocument":"/ccs/v1/cases/:caseId/documents",
+          "predefinedSearches":"/ccs/v1/searches/preconfigured",
+          "mySavedSearches":"/ccs/v1/searches/my-searches",
+          "searchDocuments":"/ccs/v1/search-executions",
+          "recentlyModifiedDocuments":"/ccs/v1/history/documents/modified"
+      }
+  }
